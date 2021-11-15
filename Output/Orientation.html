@@ -1,0 +1,2724 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>METRO, Intro to R Workshop</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dan Simonet" />
+    <meta name="date" content="2021-11-14" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/MSU.css" rel="stylesheet" />
+    <link href="libs/remark-css/rutgers-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/ninjutsu.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# METRO, Intro to R Workshop
+### Dan Simonet
+### Associate Professor, I/O Psychology
+### 2021-11-14
+
+---
+
+
+
+
+
+
+class: inverse, center, middle
+
+# Who Am I
+
+---
+
+# R Journey
+
+
+
+.panelset[
+.panel[.panel-name[Beginning]
+
+&lt;div style="text-align: center;"&gt;
+&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/SPSS.png?raw=true" width = "300" height = "200" style="margin: 60px"&gt;
+&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Excel.jpg?raw=true" width = "300" height = "200" style="margin: 60px"&gt;
+&lt;/div&gt;
+]
+
+.panel[.panel-name[Robust Stats]
+
+&lt;div style="text-align: center;"&gt;
+&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/RobustStats.jpg?raw=true" width="300" height="400" style="margin: 40px"&gt;
+&lt;/div&gt;
+]
+
+.panel[.panel-name[Polynomial Paper]
+
+&lt;div style="text-align: center;"&gt;
+&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/RSAforPersonality.png?raw=true" width="400" height="375" style="margin: 40px"&gt;
+&lt;/div&gt;
+
+.footnote[Source: Koppensteiner et al. (2014)]
+
+]
+
+.panel[.panel-name[New Possibilities]
+
+&lt;div style="text-align: center; vertical-align: text-top"&gt;
+&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Network.png?raw=true" width="700" height="445" style="margin: 0px 0px 30px 0px"&gt;
+&lt;/div&gt;
+]
+]
+
+---
+
+class: inverse, center, middle
+
+# R Applications
+
+---
+
+class: inverse, center, middle
+background-image: url("https://github.com/DanSimonet/METRO-Workshop/blob/main/img/2020_29_Astronauts_Cedric.png?raw=true")
+background-size: contain
+
+# Visuals
+
+.footnote[.tiny[.green[Image Credit: ][Cedric Scherer](https://www.behance.net/gallery/100683383/Travelling-to-Outer-Space)]]
+
+---
+
+class: inverse, top, middle
+background-image: url("https://raw.githubusercontent.com/DanSimonet/METRO-Workshop/main/img/got-network-algorithm.png")
+background-position: right
+background-size: contain
+
+# Algorithms
+
+.footnote[.tiny[.white[Image Credit: ][Andrew Beveridge](https://www.maa.org/sites/default/files/pdf/Mathhorizons/NetworkofThrones%20%281%29.pdf)]]
+
+---
+
+# Reports
+
+&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Rep1.png?raw=true" width = "450" height = "500" align="left"&gt;
+&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Rep2.png?raw=true" width = "400" height = "500" align="right"&gt;
+
+---
+
+# Why R?
+
+1. **Free**: As in Beer, as in Speech 🍺
+
+2. **AMAZING** community continuously contributing new packages 🤗
+
+3. **Comprehensive**: Clean, visualize, analyze, and communicate. Can even order pizza 🍕
+
+4. **Level Up**: Programming superpower - generate new solutions 💪
+
+5. **Speed Up**: Reproducibility and automation 🚀
+
+--
+
+.center[**Employability**]
+
+.center[&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gif/LikeaBoss.gif?raw=true" width="500" height="200"&gt;]
+
+---
+
+# Cons
+
+- **Unfamiliarity**: Learning a new language (can) suck. Go easy on yourself and R.
+
+  - Quick Tips: Start slow with Base R books and do **lots** of practice problems. Suggestions include:
+     - [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)
+     
+     - [Learning Statistics with R](https://learningstatisticswithr.com/)
+     
+     - [Quick R](https://www.statmethods.net/index.html)
+
+--
+
+- **Paradox of Choice**: R invariably has multiple ways to do the same thing. Example includes assigning objects with &lt;- and/or = (convention is to use &lt;-).
+
+  - Quick tip: Just pick whatever method/package looks easiest to you. At same time, don't be scared to mix and match. 
+
+---
+# Learning Curve: Takes Work
+
+#### Complicated Relationship   
+![](https://github.com/DanSimonet/DanSimonet.github.io/blob/master/Figures/rrelationships_R.png?raw=true)  
+
+.footer[source: https://bookdown.org/ndphillips/YaRrr/rrelationship.html]
+---
+
+# Learning Curve: Takes Work
+
+#### Zero to Hero
+![](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gosling.png?raw=true)
+---
+
+# Help
+
+_Very_ friendly communities and forums online. SO, RLadies, Twitter, etc.
+
+You can also look at the help documentation.
+
+```r
+?plot
+example(plot)
+library(ggplot2)
+example(geom_contour)
+demo("graphics", package = "graphics")
+```
+
+Most packages also provide _vignettes_ (mini use guides). [Example](https://lrberge.github.io/fixest/articles/fixest_walkthrough.html).
+
+---
+
+# Agenda
+
+.pull-left[
+### R and RStudio
+
+### Data Manipulation and Descriptives
+
+### Visualization
+
+### Statistics and Markdown Reports
+
+### New Frontiers: NLP and Twitter
+]
+
+.pull-right[
+![agenda](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/meeting-agenda.jpg?raw=true)
+]
+
+---
+
+# Requirements
+
+We will be using the [RStudio Cloud](https://rstudio.cloud/) which has all data and packages installed. Must create an account, sign in, and access the following project:
+
+-https://rstudio.cloud/project/3226006
+
+Once accessed (a) click on the Load.R script, (b) highlight all the syntax, and (c) click the Run icon. 
+
+.center[&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/LoadR.PNG?raw=true" width="1000" height="350"&gt;]
+
+---
+# Requirements
+
+Alternatively, can install R and R studio locally on your machine and install the packages as we progress.
+
+☑ Installed [R](https://www.r-project.org/).
+
+☑ Installed [RStudio](https://www.rstudio.com/products/rstudio/download/preview/).
+
+---
+
+class: inverse, center, middle
+
+# R and R Studio
+
+---
+
+class: top, left
+background-image: url("https://github.com/DanSimonet/METRO-Workshop/blob/main/img/rstudio-anatomy.png?raw=true")
+background-size: contain
+
+---
+# Base R
+.pull-left[
+#### Maths
+
+```r
+1+1
+sqrt(4)
+5^2
+```
+#### Objects
+
+```r
+x &lt;- 3 + 5
+x * 2
+x + x
+```
+#### Vectorization
+
+```r
+y &lt;- c(1,2,3,4,5)  "combine" to vector
+z &lt;- seq(0,10, by = 2) **seq** func
+2 * y
+y/z
+```
+]
+
+--
+
+.pull-right[
+####Functions
+
+
+```r
+mean(1:5) # base
+
+add_two &lt;- function(x){  # custom
+ x+2
+}
+```
+
+####Packages
+
+```r
+library(ggplot2)
+
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = F) +
+  labs(x = "Horsepower",
+       y = "Miles per Gallon (MPG)")
+```
+]
+
+---
+
+class: inverse, center, middle
+
+# Data Manipulation
+
+---
+
+# Load and View Data
+
+Use **`install.packages`** and **`library`** to install and load packages. **`read_csv`** function parses and imports **.csv** files.  
+
+
+```r
+# Load Tidyverse and IBM HR Data
+
+install.packages("tidyverse")
+library(tidyverse)
+HR_dat &lt;- read_csv("https://raw.githubusercontent.com/DanSimonet/METRO-Workshop/main/Data/IBM_HR_Data.csv")
+```
+
+--
+
+Quick data examination:
+- First 5 rows with **`head`**
+- Structure with **`glimpse`**
+- Variable labels with **`names`**
+
+
+
+---
+
+# Data Science Workflow with **Tidyverse**
+
+![](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/tidyverseworkflow.png?raw=true)
+
+---
+
+# The pipe %&gt;% 
+
+
+```r
+mean(1:10)
+```
+
+```
+## [1] 5.5
+```
+
+
+```r
+1:10 %&gt;% mean()
+```
+
+```
+## [1] 5.5
+```
+
+---
+
+# The pipe %&gt;%
+
+
+```r
+data %&gt;%
+  do_something(.) %&gt;%
+  do_another_thing(.) %&gt;%
+  do_last_thing(.)
+```
+
+**`do_last_thing(do_something_else(do_something(data)))`** is equivalent to:
+
+ - **`data %&gt;% do_something(data = .)`**
+ 
+--
+
+ - **`%&gt;% do_something_else(.)`**
+ 
+--
+
+ - **`%&gt;% do_a_third_thing(.)`**
+ 
+--
+
+&lt;br&gt;&lt;/br&gt;
+For example, we may run several cleaning operations and store as new dataset.
+
+```r
+new_cars &lt;- mtcars %&gt;%
+  mutate(cyl = factor(cyl)) %&gt;%   # convert to factor
+  select(mpg, cyl, hp)            # reduce to a few variables
+```
+
+---
+
+# **`Dplyr`**: Data Wrangling
+
+.pull-left[
+Data sets are messy, large, and disorganized
+
+**`dplyr`** provides common data manipulation **verbs** 
+which are applied to tabular data. Includes:
+
+- Extracting and renaming variables
+
+- Extracting a subset of rows
+
+- Ordering data from high to low
+
+- Calculating new variables (from existing) 
+
+- Calculating summary statistics
+
+- Merging different data frames
+
+- And more!
+
+]
+
+.pull-right[
+![dplyr](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/dplyr_schema.png?raw=true)
+]
+
+---
+
+# Select and Drop Columns
+.pull-left[
+
+```r
+HR_dat %&gt;% select(Age, JobLevel, Attrition)
+```
+
+```
+## # A tibble: 1,470 x 3
+##     Age JobLevel Attrition
+##   &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    
+## 1    41        2 Yes      
+## 2    49        2 No       
+## 3    37        1 Yes      
+## 4    33        1 No       
+## 5    27        1 No       
+## # ... with 1,465 more rows
+```
+
+
+```r
+HR_dat %&gt;% select(Age:BusinessTravel)
+```
+
+```
+## # A tibble: 1,470 x 3
+##     Age Attrition BusinessTravel   
+##   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;            
+## 1    41 Yes       Travel_Rarely    
+## 2    49 No        Travel_Frequently
+## 3    37 Yes       Travel_Rarely    
+## 4    33 No        Travel_Frequently
+## 5    27 No        Travel_Rarely    
+## # ... with 1,465 more rows
+```
+]
+
+--
+
+.pull-right[
+
+```r
+HR_dat %&gt;% select(-Attrition)
+```
+
+```
+## # A tibble: 1,470 x 34
+##     Age BusinessTravel   DailyRate Department     
+##   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          
+## 1    41 Travel_Rarely         1102 Sales          
+## 2    49 Travel_Frequent~       279 Research &amp; Dev~
+## 3    37 Travel_Rarely         1373 Research &amp; Dev~
+## 4    33 Travel_Frequent~      1392 Research &amp; Dev~
+## 5    27 Travel_Rarely          591 Research &amp; Dev~
+## # ... with 1,465 more rows, and 30 more variable:
+## #   DistanceFromHome &lt;dbl&gt;, ...
+```
+
+
+```r
+HR_dat %&gt;% select(contains("Job"))
+```
+
+```
+## # A tibble: 1,470 x 4
+##   JobInvolvement JobLevel JobRole       
+##            &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;         
+## 1              3        2 Sales Executi~
+## 2              2        2 Research Scie~
+## 3              2        1 Laboratory Te~
+## 4              3        1 Research Scie~
+## 5              3        1 Laboratory Te~
+## # ... with 1,465 more rows, and 1 more
+## #   variable: JobSatisfaction &lt;dbl&gt;
+```
+]
+---
+# Useful Select Functions
+
+### **Red functions come in dplyr**
+
+&lt;table class=" lightable-minimal" style="font-size: 28px; font-family: Yanone Kaffeesatz; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Function &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Explanation &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Select everything but &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; : &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Select range &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; contains() &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; Select columns whose name contains a character string &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; ends_with() &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; Select columns whose name ends with a string &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; everything() &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; Select every column &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; matches() &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; Select columns who name matches a regular expression &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; num_range() &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; Select columns names x1, x2, x3, x4, x5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; one_of() &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; Select columns whose names are in a group of names &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; starts_with() &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: #D7261E !important;"&gt; Select columns whose name starts with a character string &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Filter Cases
+
+Select only males
+
+
+```r
+HR_dat %&gt;% filter(Gender == "Male")
+```
+
+```
+## # A tibble: 882 x 35
+##    Gender   Age Attrition BusinessTravel DailyRate
+##    &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;              &lt;dbl&gt;
+##  1 Male      49 No        Travel_Freque~       279
+##  2 Male      37 Yes       Travel_Rarely       1373
+##  3 Male      27 No        Travel_Rarely        591
+##  4 Male      32 No        Travel_Freque~      1005
+##  5 Male      30 No        Travel_Rarely       1358
+##  6 Male      38 No        Travel_Freque~       216
+##  7 Male      36 No        Travel_Rarely       1299
+##  8 Male      35 No        Travel_Rarely        809
+##  9 Male      31 No        Travel_Rarely        670
+## 10 Male      34 No        Travel_Rarely       1346
+## # ... with 872 more rows, and 30 more variable:
+## #   Department &lt;chr&gt;, ...
+```
+
+---
+
+# Filter Cases
+
+Select only employees over 40
+
+
+```r
+HR_dat %&gt;% filter(Age &gt; 40)
+```
+
+```
+## # A tibble: 465 x 35
+##      Age Attrition BusinessTravel    DailyRate
+##    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;                 &lt;dbl&gt;
+##  1    41 Yes       Travel_Rarely          1102
+##  2    49 No        Travel_Frequently       279
+##  3    59 No        Travel_Rarely          1324
+##  4    53 No        Travel_Rarely          1219
+##  5    53 No        Travel_Rarely          1282
+##  6    42 No        Travel_Rarely           691
+##  7    44 No        Travel_Rarely           477
+##  8    46 No        Travel_Rarely           705
+##  9    44 No        Travel_Rarely          1459
+## 10    43 No        Travel_Rarely          1273
+## # ... with 455 more rows, and 31 more variable:
+## #   Department &lt;chr&gt;, ...
+```
+
+---
+
+# Filter Cases
+
+Select only employees who are Male and 40
+
+
+```r
+HR_dat %&gt;% filter(Gender == "Male", Age &gt; 40)
+```
+
+```
+## # A tibble: 272 x 35
+##    Gender   Age Attrition BusinessTravel DailyRate
+##    &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;              &lt;dbl&gt;
+##  1 Male      49 No        Travel_Freque~       279
+##  2 Male      42 No        Travel_Rarely        691
+##  3 Male      44 No        Travel_Rarely       1459
+##  4 Male      50 Yes       Travel_Rarely        869
+##  5 Male      46 No        Travel_Freque~      1211
+##  6 Male      48 Yes       Travel_Rarely        626
+##  7 Male      45 No        Travel_Rarely       1339
+##  8 Male      45 No        Travel_Rarely        193
+##  9 Male      46 No        Travel_Rarely        945
+## 10 Male      55 No        Travel_Rarely        111
+## # ... with 262 more rows, and 30 more variable:
+## #   Department &lt;chr&gt;, ...
+```
+
+---
+
+# Filter: Logical Tests in R
+
+.pull-left[
+###?Comparison
+&lt;table class=" lightable-classic" style="font-size: 30px; font-family: Yanone Kaffeesatz; width: auto !important; float: left; margin-right: 10px;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; &amp;lt; &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; Less than &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; &amp;gt; &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; Greater than &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; == &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; Equal to &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; &amp;lt;= &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; Less than or equal to &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; &amp;gt;= &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; Greater than or equal to &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; != &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; Not equal to &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; %in% &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; Group membership &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; is.na &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; Is NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; !is.na &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; is not NA &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+###?base::Logic
+&lt;table class=" lightable-classic" style="font-size: 30px; font-family: Yanone Kaffeesatz; width: auto !important; float: left; margin-right: 10px;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; &amp;amp; &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; boolean and &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; | &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; boolean or &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; xor &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; exactly or &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; ! &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; not &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; any &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; any true &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 5em; background-color: #F5F5F5 !important;"&gt; all &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: #F5F5F5 !important;"&gt; all true &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+---
+
+# Mutate: Create New Variables
+
+- Data transformation (log, square root, %)
+
+- Composites (addition, multiplication)
+
+- Change factor orders
+
+- Center or lag variables
+
+
+```r
+HR_dat %&gt;%
+  mutate(AnnualIncome = MonthlyIncome * 12, 
+         WorkLifeAtComp = YearsAtCompany/TotalWorkingYears)
+```
+
+```
+## # A tibble: 1,470 x 5
+##   MonthlyIncome AnnualIncome TotalWorkingYears YearsAtCompany LifeAtComp
+##           &lt;dbl&gt;        &lt;dbl&gt;             &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
+## 1          5993        71916                 8              6      0.75 
+## 2          5130        61560                10             10      1    
+## 3          2090        25080                 7              0      0    
+## 4          2909        34908                 8              8      1    
+## 5          3468        41616                 6              2      0.333
+## # ... with 1,465 more rows
+```
+
+---
+
+# Mutate
+
+Convert attrition to a factor (for analyses) and average correlated tenure variables&lt;sup&gt;1&lt;/sup&gt;
+&lt;br&gt;&lt;/br&gt;
+.footnote[&lt;sup&gt;1&lt;/sup&gt; To use `mean` for individual rows across columns (e.g,. scoring scales) use `rowwise` prior to mutate]
+
+
+```r
+HR_dat %&gt;%
+  mutate(Attrition = factor(Attrition),
+         TenComp = (YearsAtCompany + YearsInCurrentRole + YearsWithCurrManager)/3)
+```
+
+```
+## # A tibble: 1,470 x 5
+##   Attrition YearsAtCompany YearsInCurrentRole YearsWithCurrManag~ TenComp
+##   &lt;fct&gt;              &lt;dbl&gt;              &lt;dbl&gt;               &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Yes                    6                  4                   5       5
+## 2 No                    10                  7                   7       8
+## 3 Yes                    0                  0                   0       0
+## 4 No                     8                  7                   0       5
+## 5 No                     2                  2                   2       2
+## # ... with 1,465 more rows
+```
+&lt;br&gt;&lt;/br&gt;
+---
+
+# Arrange
+
+Rearrange orders of values based on data in columns
+
+
+```r
+HR_dat %&gt;% arrange(MonthlyIncome)
+```
+
+.pull-left[
+&lt;table class=" lightable-classic" style="font-size: 20px; font-family: Yanone Kaffeesatz; width: auto !important; float: left; margin-right: 10px;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Department &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; DistanceFromHome &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; MonthlyIncome &lt;/th&gt;
+   
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; Sales &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 5993 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 5130 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 2090 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 2909 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 3468 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 3068 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 2670 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 2693 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 9526 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 5237 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+&lt;table class=" lightable-classic" style="font-size: 20px; font-family: Yanone Kaffeesatz; width: auto !important; float: right; margin-left: 10px;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Department &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; DistanceFromHome &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; MonthlyIncome &lt;/th&gt;
+   
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 2090 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 2670 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 2693 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 2909 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 3068 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 3468 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 5130 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 5237 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; Sales &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 5993 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 9526 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+
+# Arrange
+
+Can change from highest to lowest with `desc`
+
+
+```r
+HR_dat %&gt;% arrange(desc(MonthlyIncome))
+```
+
+.left-pull[
+&lt;table class=" lightable-classic" style="font-size: 20px; font-family: Yanone Kaffeesatz; width: auto !important; float: left; margin-right: 10px;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Department &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; DistanceFromHome &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; MonthlyIncome &lt;/th&gt;
+   
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; Sales &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 5993 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 5130 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 2090 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 2909 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 3468 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 3068 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 2670 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 2693 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 9526 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 5237 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right-pull[
+&lt;table class=" lightable-classic" style="font-size: 20px; font-family: Yanone Kaffeesatz; width: auto !important; float: right; margin-left: 10px;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Department &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; DistanceFromHome &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; MonthlyIncome &lt;/th&gt;
+   
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(253, 231, 37, 1) !important;"&gt; 9526 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; Sales &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(181, 222, 43, 1) !important;"&gt; 5993 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(108, 205, 90, 1) !important;"&gt; 5237 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(53, 183, 121, 1) !important;"&gt; 5130 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(31, 158, 137, 1) !important;"&gt; 3468 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(38, 130, 142, 1) !important;"&gt; 3068 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(49, 104, 142, 1) !important;"&gt; 2909 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(62, 74, 137, 1) !important;"&gt; 2693 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(72, 40, 120, 1) !important;"&gt; 2670 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"&gt; 2090 &lt;/td&gt;
+   
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+
+# Combining `Dplyr` Verbs: Clean Data for Analyses
+
+Filter out distant employees
+
+
+```r
+HR_dat %&gt;% 
+* filter(DistanceFromHome &lt;= 28)
+```
+
+
+```
+## # A tibble: 6 x 5
+##     Age Attrition DistanceFromHome Department             YearsAtCompany
+##   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;                           &lt;dbl&gt;
+## 1    41 Yes                      1 Sales                               6
+## 2    49 No                       8 Research &amp; Development             10
+## 3    37 Yes                      2 Research &amp; Development              0
+## 4    33 No                       3 Research &amp; Development              8
+## 5    27 No                       2 Research &amp; Development              2
+## 6    32 No                       2 Research &amp; Development              7
+```
+
+---
+
+# Combining `Dplyr` Verbs: Clean Data for Analyses
+
+Filter out distant employees and create new tenure variables.
+
+
+```r
+HR_dat %&gt;% 
+  filter(DistanceFromHome &lt;= 28) %&gt;%
+* mutate(
+*   OvTenure = (YearsInCurrentRole + YearsSinceLastPromotion + YearsWithCurrManager)/3)
+```
+
+
+```
+## # A tibble: 6 x 6
+##     Age Attrition DistanceFromHome Department     OvTenure YearsAtCompany
+##   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;          &lt;dbl&gt;
+## 1    41 Yes                      1 Sales              3                 6
+## 2    49 No                       8 Research &amp; De~     5                10
+## 3    37 Yes                      2 Research &amp; De~     0                 0
+## 4    33 No                       3 Research &amp; De~     3.33              8
+## 5    27 No                       2 Research &amp; De~     2                 2
+## 6    32 No                       2 Research &amp; De~     5.33              7
+```
+
+---
+
+# Combining `Dplyr` Verbs: Clean Data for Analyses
+
+Filter out distant employees, create new tenure variables, and recode characters as factors
+
+
+```r
+HR_dat %&gt;% 
+  filter(DistanceFromHome &lt;= 28) %&gt;%
+  mutate(                                                      
+    OvTenure = (YearsInCurrentRole + YearsSinceLastPromotion + YearsWithCurrManager)/3,
+*   Attrition = factor(Attrition),
+*   Department = factor(Department),
+*   Gender = factor(Gender))
+```
+
+
+```
+## # A tibble: 6 x 7
+##     Age Attrition DistanceFromHome Department     OvTenure YearsAtCompany
+##   &lt;dbl&gt; &lt;fct&gt;                &lt;dbl&gt; &lt;fct&gt;             &lt;dbl&gt;          &lt;dbl&gt;
+## 1    41 Yes                      1 Sales              3                 6
+## 2    49 No                       8 Research &amp; De~     5                10
+## 3    37 Yes                      2 Research &amp; De~     0                 0
+## 4    33 No                       3 Research &amp; De~     3.33              8
+## 5    27 No                       2 Research &amp; De~     2                 2
+## 6    32 No                       2 Research &amp; De~     5.33              7
+## # ... with 1 more variable: Gender &lt;fct&gt;
+```
+
+---
+
+# Combining `Dplyr` Verbs: Clean Data for Analyses
+
+Filter out distant employees, create new tenure variables, recode characters as factors, and remove columns with **Years** in the name. Store as new dataframe **`HR_dat_s`**.
+
+
+```r
+*HR_dat_s &lt;- HR_dat %&gt;%
+  filter(DistanceFromHome &lt;= 28) %&gt;%
+   mutate(OvTenure = (YearsInCurrentRole + YearsSinceLastPromotion + YearsWithCurrManager)/3,
+          Attrition = factor(Attrition),
+          Department = factor(Department),
+          Gender = factor(Gender)) %&gt;%
+* select(-contains("Years"))
+```
+
+
+```
+## # A tibble: 6 x 31
+##     Age Attrition BusinessTravel  DailyRate Department   DistanceFromHome
+##   &lt;dbl&gt; &lt;fct&gt;     &lt;chr&gt;               &lt;dbl&gt; &lt;fct&gt;                   &lt;dbl&gt;
+## 1    41 Yes       Travel_Rarely        1102 Sales                       1
+## 2    49 No        Travel_Frequen~       279 Research &amp; ~                8
+## 3    37 Yes       Travel_Rarely        1373 Research &amp; ~                2
+## 4    33 No        Travel_Frequen~      1392 Research &amp; ~                3
+## 5    27 No        Travel_Rarely         591 Research &amp; ~                2
+## 6    32 No        Travel_Frequen~      1005 Research &amp; ~                2
+## # ... with 25 more variables: Education &lt;dbl&gt;, EducationField &lt;chr&gt;,
+## #   EmployeeCount &lt;dbl&gt;, EmployeeNumber &lt;dbl&gt;, ...
+```
+
+---
+
+# Summarize
+
+**Reduces** data frame by taking a vector of values and returning a **single** value. Used to compute tables of summary data such as means, median, and standard deviation. 
+
+
+```r
+HR_dat %&gt;% summarize(JS_M = mean(JobSatisfaction),  # mean 
+                     JS_SD = sd(JobSatisfaction),   # sd
+                     JS_SE = JS_SD/sqrt(n()),       # standard error
+                     n = n())                       # number participants
+```
+
+```
+## # A tibble: 1 x 4
+##    JS_M JS_SD  JS_SE     n
+##   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
+## 1  2.73  1.10 0.0288  1470
+```
+
+---
+
+# Group By and Summarize
+
+Rather than calculate a grand mean we often want means for different departments, conditions, demographics, and so forth. Can use **`group_by`** to summarize data by group. 
+
+
+```r
+HR_dat %&gt;% 
+* group_by(Department) %&gt;%
+  summarize(JS_M = mean(JobSatisfaction),  
+            JS_SD = sd(JobSatisfaction),   
+            JS_SE = JS_SD/sqrt(n()),       
+            n = n())                       
+```
+
+```
+## # A tibble: 3 x 5
+##   Department              JS_M JS_SD  JS_SE     n
+##   &lt;chr&gt;                  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
+## 1 Human Resources         2.60  1.07 0.135     63
+## 2 Research &amp; Development  2.73  1.10 0.0355   961
+## 3 Sales                   2.75  1.11 0.0526   446
+```
+
+---
+
+# Descriptives
+
+Many packages provide automatic data summaries (e.g., **`psych`**, **`skimr`**). Suggest **`modelsummary`** for ease, versatility, and customization. Use **`datasummary_skim`** to make a summary table. 
+
+
+```r
+library(modelsummary)
+datasummary_skim(HR_dat[,c(1, 6, 13, 17, 32)])
+```
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Unique (#) &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Missing (%) &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Mean &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Min &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Median &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Max &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt;    &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Age &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewBox="0 0 48.00 12.00"&gt;&lt;defs&gt;&lt;style type="text/css"&gt;
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  &lt;/style&gt;&lt;/defs&gt;&lt;rect width="100%" height="100%" style="stroke: none; fill: none;"&gt;&lt;/rect&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"&gt;&lt;rect x="0.00" y="0.00" width="48.00" height="12.00"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"&gt;
+&lt;/g&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"&gt;&lt;rect x="0.00" y="2.88" width="48.00" height="9.12"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"&gt;&lt;rect x="-1.40" y="10.97" width="5.29" height="0.69" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="3.89" y="9.32" width="5.29" height="2.34" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="9.19" y="5.19" width="5.29" height="6.47" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="14.48" y="3.22" width="5.29" height="8.44" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="19.77" y="4.87" width="5.29" height="6.79" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="25.06" y="6.94" width="5.29" height="4.73" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="30.35" y="8.46" width="5.29" height="3.20" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="35.64" y="9.30" width="5.29" height="2.36" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="40.93" y="10.51" width="5.29" height="1.16" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; DistanceFromHome &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewBox="0 0 48.00 12.00"&gt;&lt;defs&gt;&lt;style type="text/css"&gt;
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  &lt;/style&gt;&lt;/defs&gt;&lt;rect width="100%" height="100%" style="stroke: none; fill: none;"&gt;&lt;/rect&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"&gt;&lt;rect x="0.00" y="0.00" width="48.00" height="12.00"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"&gt;
+&lt;/g&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"&gt;&lt;rect x="0.00" y="2.88" width="48.00" height="9.12"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"&gt;&lt;rect x="0.19" y="3.22" width="3.17" height="8.44" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="3.37" y="8.68" width="3.17" height="2.98" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="6.54" y="9.16" width="3.17" height="2.50" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="9.71" y="8.36" width="3.17" height="3.31" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="12.89" y="8.22" width="3.17" height="3.45" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="16.06" y="10.67" width="3.17" height="0.99" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="19.24" y="10.86" width="3.17" height="0.81" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="22.41" y="10.49" width="3.17" height="1.17" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="25.59" y="10.74" width="3.17" height="0.93" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="28.76" y="10.71" width="3.17" height="0.95" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="31.94" y="10.92" width="3.17" height="0.75" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="35.11" y="10.55" width="3.17" height="1.11" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="38.29" y="10.65" width="3.17" height="1.01" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="41.46" y="10.96" width="3.17" height="0.71" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="44.63" y="11.12" width="3.17" height="0.54" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HourlyRate &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 65.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 66.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 100.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewBox="0 0 48.00 12.00"&gt;&lt;defs&gt;&lt;style type="text/css"&gt;
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  &lt;/style&gt;&lt;/defs&gt;&lt;rect width="100%" height="100%" style="stroke: none; fill: none;"&gt;&lt;/rect&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"&gt;&lt;rect x="0.00" y="0.00" width="48.00" height="12.00"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"&gt;
+&lt;/g&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"&gt;&lt;rect x="0.00" y="2.88" width="48.00" height="9.12"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"&gt;&lt;rect x="1.78" y="3.81" width="3.17" height="7.86" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="4.95" y="5.49" width="3.17" height="6.17" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="8.13" y="3.22" width="3.17" height="8.44" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="11.30" y="4.10" width="3.17" height="7.56" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="14.48" y="4.03" width="3.17" height="7.64" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="17.65" y="3.29" width="3.17" height="8.37" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="20.83" y="4.54" width="3.17" height="7.12" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="24.00" y="4.83" width="3.17" height="6.83" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="27.17" y="3.81" width="3.17" height="7.86" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="30.35" y="3.51" width="3.17" height="8.15" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="33.52" y="3.36" width="3.17" height="8.30" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="36.70" y="4.10" width="3.17" height="7.56" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="39.87" y="4.03" width="3.17" height="7.64" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="43.05" y="3.22" width="3.17" height="8.44" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; JobSatisfaction &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewBox="0 0 48.00 12.00"&gt;&lt;defs&gt;&lt;style type="text/css"&gt;
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  &lt;/style&gt;&lt;/defs&gt;&lt;rect width="100%" height="100%" style="stroke: none; fill: none;"&gt;&lt;/rect&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"&gt;&lt;rect x="0.00" y="0.00" width="48.00" height="12.00"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"&gt;
+&lt;/g&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"&gt;&lt;rect x="0.00" y="2.88" width="48.00" height="9.12"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"&gt;&lt;rect x="1.78" y="6.35" width="2.96" height="5.32" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="4.74" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="7.70" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="10.67" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="13.63" y="6.51" width="2.96" height="5.15" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="16.59" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="19.56" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="22.52" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="25.48" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="28.44" y="3.53" width="2.96" height="8.13" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="31.41" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="34.37" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="37.33" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="40.30" y="11.66" width="2.96" height="0.00" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="43.26" y="3.22" width="2.96" height="8.44" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; YearsAtCompany &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 40.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewBox="0 0 48.00 12.00"&gt;&lt;defs&gt;&lt;style type="text/css"&gt;
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  &lt;/style&gt;&lt;/defs&gt;&lt;rect width="100%" height="100%" style="stroke: none; fill: none;"&gt;&lt;/rect&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"&gt;&lt;rect x="0.00" y="0.00" width="48.00" height="12.00"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"&gt;
+&lt;/g&gt;&lt;defs&gt;&lt;clipPath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"&gt;&lt;rect x="0.00" y="2.88" width="48.00" height="9.12"&gt;&lt;/rect&gt;&lt;/clipPath&gt;&lt;/defs&gt;&lt;g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"&gt;&lt;rect x="1.78" y="3.22" width="5.56" height="8.44" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="7.33" y="6.79" width="5.56" height="4.88" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="12.89" y="10.49" width="5.56" height="1.18" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="18.44" y="10.88" width="5.56" height="0.78" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="24.00" y="11.22" width="5.56" height="0.45" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="29.56" y="11.56" width="5.56" height="0.098" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="35.11" y="11.53" width="5.56" height="0.13" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;rect x="40.67" y="11.62" width="5.56" height="0.044" style="stroke-width: 0.38; fill: #000000;"&gt;&lt;/rect&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+**`datasummary`** handles non-numeric with **`type = "categorical"`** argument.
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;    &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; N &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Attrition &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; No &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1233 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 83.9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Yes &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 237 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Department &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Human Resources &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Research &amp;amp; Development &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 961 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 65.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sales &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 446 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30.3 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+class: full-slide-fig, inverse
+&lt;img src="Orientation_files/figure-html/unnamed-chunk-50-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+.white[.center[Corrplot Package]]
+---
+
+# Become a Data Wizard
+
+[Learn the tidyverse](https://www.tidyverse.org/learn/): books, workshops and online courses
+
+- Selection of books:
+  - [R for Data Science](https://r4ds.had.co.nz/)
+  - [Stat. Inference via Data Science](https://moderndive.com/)
+  - [R Data Mining](https://www.oreilly.com/library/view/r-data-mining/9781787124462/)
+  
+- [Tidy Tuesday Videos](https://www.youtube.com/user/safe4democracy/videos) by D. Robinson, Chief Data Scientist, DataCamp
+
+- [Two-Day workshop materials](https://github.com/cwickham/data-science-in-tidyverse) for Data Science in tidyverse, Rstudio 2019 conference
+
+.center[&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gif/CoolWiz.gif?raw=true" width="400" height="250"&gt;]
+
+---
+
+class: inverse, center, middle
+
+# Visualization
+
+---
+
+# `ggplot`: Tableau of R 
+
+&lt;img src="Orientation_files/figure-html/unnamed-chunk-51-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# `ggplot`: Tableau of R 
+Tweak to **geom_bar** property to get frequencies
+&lt;br&gt;&lt;/br&gt;
+&lt;img src="Orientation_files/figure-html/unnamed-chunk-52-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Visualization with `ggplot`
+
+**g**rammer of **g**raphics **plot**
+&lt;br&gt;&lt;br/&gt;
+
+.center[&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/ggplot-layers-2.png?raw=true" width = 600, height = 400&gt;]
+
+---
+
+# General ggplot syntax
+
+Data, axes (and other aesthetics), and shapes (or geom)
+
+
+```r
+ggplot(data = HR_dat, aes(x = MonthlyIncome)) +
+  geom_density(fill = "blue") 
+```
+
+&lt;img src="Orientation_files/figure-html/unnamed-chunk-53-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+
+```r
+*ggplot(data = HR_dat_s)
+```
+First add data
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-01-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+
+```r
+ggplot(data = HR_dat_s,
+*      aes(y = JobSatisfaction, x = MonthlyIncome))
+```
+Second add aesthetics
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-02-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+
+```r
+ggplot(data = HR_dat_s,
+       aes(y = JobSatisfaction, x = MonthlyIncome)) +
+* geom_point()
+```
+Three add geometry
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-03-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+
+```r
+ggplot(data = HR_dat_s,
+       aes(y = JobSatisfaction, x = MonthlyIncome)) +
+* geom_point(position = "jitter", alpha = .40) +
+* geom_smooth(method = "lm")
+```
+Maybe add jitter, transparency, and regression
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-04-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+
+```r
+ggplot(data = HR_dat,
+*      aes(y = JobSatisfaction, x = HourlyRate)) +
+  geom_point(position = "jitter", alpha = .40) + 
+  geom_smooth(method = "lm")
+```
+Try another predictor. Minuscule effect. 
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-05-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+
+```r
+ggplot(data = HR_dat,
+       aes(y = JobSatisfaction, x = HourlyRate)) + 
+  geom_point(position = "jitter", alpha = .40) + 
+  geom_smooth(method = "lm") +
+* theme_classic() +
+* theme(text = element_text(size = 16, family = "serif")) +
+* labs(title = "Hourly Pay Slightly Less Satisfied",
+*      x = "Hourly Rates ($)",
+*      y = "Overall Job Satisfaction")
+```
+Modify theme and labels
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-06-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+
+```r
+ggplot(data = HR_dat,
+       aes(y = JobSatisfaction, x = HourlyRate)) + 
+  geom_point(position = "jitter", alpha = .40) + 
+  geom_smooth(method = "lm") +
+* facet_wrap(~Department) +
+  theme_classic() + 
+  theme(text = element_text(size = 16, family = "serif")) +  
+  labs(title = "Hourly Pay Slightly Less Satisfied",
+       x = "Hourly Rates ($)",
+       y = "Overall Job Satisfaction") 
+```
+Add facets
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-07-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+
+```r
+ggplot(data = HR_dat,
+*      aes(y = JobSatisfaction, x = HourlyRate, color = Gender)) +
+  geom_point(position = "jitter", alpha = .40) + 
+* geom_smooth(method = "lm", se = F) +
+  facet_wrap(~Department) +   
+  theme_classic() + 
+  theme(text = element_text(size = 16, family = "serif"),
+*       legend.position = "bottom") +
+  labs(title = "Hourly Pay Slightly Less Satisfied",
+       x = "Hourly Rates ($)",
+       y = "Overall Job Satisfaction") 
+```
+Add color based on gender. Remove SE bars
+and move legend to bottom. 
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-08-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Dazzle with `ggplot`
+
+Many online resources. Suggest a general overview of grammar of graphics followed by cookbooks.
+
+- [ggplot2 Grammar Guide](https://evamaerey.github.io/ggplot2_grammar_guide/about)
+
+- [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
+
+- [US Business Analytics](https://uc-r.github.io/ggplot_intro)
+
+- [R Graphics Cookbook](https://r-graphics.org/)
+
+.center[&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gif/oooh-aaah.gif?raw=true" width="400" height="250"&gt;]
+
+---
+
+class: inverse, center, middle
+
+# Statistical Reports
+
+---
+
+# Statistical Inference
+
+Want to look at income differences. Two-way table of average monthly income by department and gender using **`dplyr`**.
+
+
+```r
+HR_dat_s %&gt;%
+* group_by(Department, Gender) %&gt;%
+  summarize(
+    Income_M = mean(MonthlyIncome),
+    Income_SD = sd(MonthlyIncome),
+    n = n()
+  )
+```
+
+```
+## # A tibble: 6 x 5
+## # Groups:   Department [3]
+##   Department             Gender Income_M Income_SD     n
+##   &lt;fct&gt;                  &lt;fct&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;int&gt;
+## 1 Human Resources        Female    7264      6143.    20
+## 2 Human Resources        Male      6371.     5669.    43
+## 3 Research &amp; Development Female    6552.     4828.   374
+## 4 Research &amp; Development Male      6116.     4977.   568
+## 5 Sales                  Female    6951.     4288.   187
+## 6 Sales                  Male      6955.     3894.   251
+```
+
+---
+
+# Exploratory Visualization
+
+Visualize the range, central tendency, and quartiles via a **`geom_boxplot`** call
+
+
+```r
+ggplot(data = HR_dat_s,                                           # add data
+       aes(x = Department, y = MonthlyIncome, color = Gender)) +  # axes and color by gender 
+  geom_boxplot()                                                  # represent as boxplot
+```
+
+&lt;img src="Orientation_files/figure-html/unnamed-chunk-55-1.png" width="650px" height="400px" style="display: block; margin: auto;" /&gt;
+
+---
+
+# ANOVA: Base R
+
+Basic anova setup is: **`aov(DV ~ IV, data = data_df)`**
+
+--
+
+
+```r
+# This would give ONLY main effects. Use pluses between factors.
+inc_aov_m &lt;- aov(MonthlyIncome ~ Department + Gender, data = HR_dat_s)          
+
+# This gives main effects AND interactions. Use asterisk between factors. 
+inc_aov_i &lt;- aov(MonthlyIncome ~ Department * Gender, data = HR_dat_s)    
+
+# use summary on anova object to get results
+summary(inc_aov_i)
+```
+
+```
+##                     Df    Sum Sq  Mean Sq F value Pr(&gt;F)  
+## Department           2 1.334e+08 66692699   2.993 0.0504 .
+## Gender               1 3.489e+07 34885218   1.566 0.2110  
+## Department:Gender    2 1.881e+07  9402977   0.422 0.6558  
+## Residuals         1437 3.202e+10 22280270                 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+---
+
+# ANOVA: **`Afex`**
+
+Mixed designs, post-hocs, and sums of squares (III v. I) with **`afex`**. Requires **id** variable for each person. 
+--
+
+```r
+library(afex)
+# add row id
+HR_dat_s &lt;- HR_dat_s %&gt;% mutate(id = row_number())   
+
+# Use aov_car
+inc_aov &lt;- aov_car(MonthlyIncome ~ Department * Gender + Error(id),  #add Error(id)
+                   data = HR_dat_s)
+
+# Print object
+inc_aov
+```
+
+```
+## Anova Table (Type 3 tests)
+## 
+## Response: MonthlyIncome
+##              Effect      df         MSE      F   ges p.value
+## 1        Department 2, 1437 22280269.72 2.59 +  .004    .075
+## 2            Gender 1, 1437 22280269.72   0.90 &lt;.001    .342
+## 3 Department:Gender 2, 1437 22280269.72   0.42 &lt;.001    .656
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '+' 0.1 ' ' 1
+```
+
+---
+
+# ANOVA: Post-hocs with **`emmeans`**
+
+Can do follow-up post hoc tests with **`emmeans`** which involves (a) setting up a reference grid of marginal means, and (b) specifying custom contrasts or all pairwise with **`pairs`**.
+
+```r
+library(emmeans)
+
+ph &lt;- emmeans(inc_aov, c("Department", "Gender"))  # set up reference grid
+pairs(ph)                                          # test all pairwise diff
+```
+
+
+```
+##  contrast                  estimate   SE   df t.ratio p.value
+##  HmnR Female - Rs&amp;D Female   712.24 1083 1437   0.657  0.9864
+##  HmnR Female - Sals Female   313.41 1110 1437   0.282  0.9998
+##  HmnR Female - HmnR Male     892.98 1278 1437   0.699  0.9821
+##  HmnR Female - Rs&amp;D Male    1147.91 1074 1437   1.069  0.8937
+##  HmnR Female - Sals Male     308.55 1097 1437   0.281  0.9998
+##  Rs&amp;D Female - Sals Female  -398.83  423 1437  -0.943  0.9351
+##  Rs&amp;D Female - HmnR Male     180.73  760 1437   0.238  0.9999
+##  Rs&amp;D Female - Rs&amp;D Male     435.67  314 1437   1.386  0.7355
+##  Rs&amp;D Female - Sals Male    -403.70  385 1437  -1.048  0.9014
+##  Sals Female - HmnR Male     579.57  798 1437   0.726  0.9788
+##  Sals Female - Rs&amp;D Male     834.50  398 1437   2.097  0.2894
+##  Sals Female - Sals Male      -4.87  456 1437  -0.011  1.0000
+##  HmnR Male - Rs&amp;D Male       254.93  747 1437   0.341  0.9994
+##  HmnR Male - Sals Male      -584.43  779 1437  -0.750  0.9755
+##  Rs&amp;D Male - Sals Male      -839.36  358 1437  -2.346  0.1764
+## 
+## P value adjustment: tukey method for comparing a family of 6 estimates
+```
+
+---
+
+# Regression: Base
+
+Basic lm setup is: **`lm(DV ~ IV, data = data_df)`**
+
+--
+
+
+```r
+JS_mod &lt;- lm(JobSatisfaction ~ HourlyRate + WorkLifeBalance + NumCompaniesWorked, data = HR_dat_s) # JS from 3 IV
+summary(JS_mod) # summarize to get model output
+```
+
+```
+## 
+## Call:
+## lm(formula = JobSatisfaction ~ HourlyRate + WorkLifeBalance + 
+##     NumCompaniesWorked, data = HR_dat_s)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.9346 -0.7776  0.2299  1.1791  1.5456 
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         3.094088   0.153239  20.191   &lt;2e-16 ***
+## HourlyRate         -0.003607   0.001427  -2.528   0.0116 *  
+## WorkLifeBalance    -0.024576   0.041078  -0.598   0.5498    
+## NumCompaniesWorked -0.023036   0.011627  -1.981   0.0478 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 1.101 on 1439 degrees of freedom
+## Multiple R-squared:  0.0075,	Adjusted R-squared:  0.00543 
+## F-statistic: 3.624 on 3 and 1439 DF,  p-value: 0.01264
+```
+
+---
+
+# Regression: **`sjPlot`** for presentation
+
+Many packages for reporting regression output (e.g., **`jtools`**, **`stargazer`**). Will use **`sjPlot`** which is geared towards social scientists. Run the **`tab_model`** function on the fitted **`lm`** object. 
+
+
+```r
+library(sjPlot)
+tab_model(JS_mod)
+```
+
+&lt;table style="border-collapse:collapse; border:none;"&gt;
+&lt;tr&gt;
+&lt;th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; "&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; "&gt;Job Satisfaction&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; "&gt;Predictors&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;Estimates&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;CI&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;p&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;(Intercept)&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;3.09&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;2.79&amp;nbsp;&amp;ndash;&amp;nbsp;3.39&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;HourlyRate&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.00&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.01&amp;nbsp;&amp;ndash;&amp;nbsp;-0.00&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;0.012&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;WorkLifeBalance&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.02&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.11&amp;nbsp;&amp;ndash;&amp;nbsp;0.06&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.550&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;NumCompaniesWorked&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.02&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.05&amp;nbsp;&amp;ndash;&amp;nbsp;-0.00&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;0.048&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;"&gt;Observations&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3"&gt;1443&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;"&gt;R&lt;sup&gt;2&lt;/sup&gt; / R&lt;sup&gt;2&lt;/sup&gt; adjusted&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3"&gt;0.007 / 0.005&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+---
+
+# Regression: **`sjPlot`** for presentation
+
+Can show/hide additional columns such as:
+- `show.ci` to show confidence intervals
+- `show.se` to show standard errors
+- `show.std` to show standardized estimates
+- `show.stat` to show coefficients' test statistics
+
+
+```r
+tab_model(JS_mod, show.ci = F, show.se = T, show.std = T, show.stat = T)
+```
+
+&lt;table style="border-collapse:collapse; border:none;"&gt;
+&lt;tr&gt;
+&lt;th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; "&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th colspan="6" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; "&gt;Job Satisfaction&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; "&gt;Predictors&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;Estimates&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;std. Error&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;std. Beta&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;standardized std. Error&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;Statistic&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7"&gt;p&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;(Intercept)&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;3.09&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.15&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.00&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.03&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;20.19&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7"&gt;&lt;strong&gt;&amp;lt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;HourlyRate&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.00&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.00&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.07&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.03&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;2.53&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7"&gt;&lt;strong&gt;0.012&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;WorkLifeBalance&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.02&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.04&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.02&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.03&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.60&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7"&gt;0.550&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;NumCompaniesWorked&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.02&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.01&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;0.05&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.03&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&amp;#45;1.98&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7"&gt;&lt;strong&gt;0.048&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;"&gt;Observations&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="6"&gt;1443&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;"&gt;R&lt;sup&gt;2&lt;/sup&gt; / R&lt;sup&gt;2&lt;/sup&gt; adjusted&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="6"&gt;0.007 / 0.005&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+---
+
+# Logistic Regression: Turnover
+
+Basic logistic setup: **`glm(DV ~ IV, data = data_df, family = "binomial")`**
+
+**`glm`** is a *generalized linear model* which transforms outcomes with non-normal error distributions (e.g., binary) to be fit by least squares. Requires **`family`** specification (e.g., poisson) which is binomial for binary outcomes. **`tab_model`** from **`sjPlot`** returns odds ratios and Tjur R&lt;sup&gt;2&lt;/sup&gt;. 
+
+
+```r
+tur_mod &lt;- glm(Attrition ~ MonthlyIncome + WorkLifeBalance +  JobSatisfaction, 
+               data = HR_dat_s, family = "binomial")
+tab_model(tur_mod)
+```
+
+&lt;table style="border-collapse:collapse; border:none;"&gt;
+&lt;tr&gt;
+&lt;th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; "&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; "&gt;Attrition&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; "&gt;Predictors&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;Odds Ratios&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;CI&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;p&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;(Intercept)&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;1.51&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.76&amp;nbsp;&amp;ndash;&amp;nbsp;2.98&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.237&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;MonthlyIncome&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;1.00&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;1.00&amp;nbsp;&amp;ndash;&amp;nbsp;1.00&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;WorkLifeBalance&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.78&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.64&amp;nbsp;&amp;ndash;&amp;nbsp;0.95&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;0.014&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;JobSatisfaction&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.78&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.69&amp;nbsp;&amp;ndash;&amp;nbsp;0.89&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;"&gt;Observations&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3"&gt;1443&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;"&gt;R&lt;sup&gt;2&lt;/sup&gt; Tjur&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3"&gt;0.046&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+---
+
+# RMarkdown Reports
+
+Weave together code, text, and formatting to dynamically produce data-centric documents (e.g., reports). Variant of **`markdown`** which is a lightweight markup language. 
+
+&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/MarkdownQuick.png?raw=true" width="700" height="445" style="margin: 0px 0px 30px 0px"&gt;
+
+---
+
+# Anatomy of RMarkdown
+
+&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/rmarkdown-anatomy.png?raw=true" width="900" height="500" style="margin: 0px 0px 30px 0px"&gt;
+
+---
+# New RMarkdown Document
+
+.pull-left[
+File 🠪 New File 🠪 R Markdown
+
+![](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Markdown-FileOpen.png?raw=true)
+]
+--
+.pull-right[
+Provide title, author, and output. Select html.
+&lt;br&gt;&lt;/br&gt;
+
+![](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Markdown-Setuppng.png?raw=true)
+]
+
+---
+# Weave Code and Text
+
+The current report analyzes income disparities and attrition for the IBM workforce. the sample contains 1470 employees spread across 3 departments.
+
+#### ANOVA Analysis
+
+A 2 x 3 between-group ANOVA was conducted to evaluate income differences by department and gender. Results suggest no significant effect for gender, `\(F_{1, 1437} = .9038, p = .34\)`, or the interaction, `\(F_{2,1437} = .42, p = .66\)`, but a marginal effect for department, `\(F_{2, 1437} = 2.59, p = .08\)`, with sales (*M* = $6,953) trending towards higher monthly pay than HR (*M* = $6,655) and research (*M* = $6,289).
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; num Df &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; den Df &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; MSE &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; F &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; ges &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Pr(&amp;gt;F) &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Department &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1437 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22280270 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.5943556 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0035978 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0750438 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gender &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1437 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22280270 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.9038190 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0006286 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3419196 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Department:Gender &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1437 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22280270 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4220316 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0005870 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6557946 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+class: inverse, center, middle
+
+# New Frontiers: Text Mining
+
+---
+
+# NLP Example with HR Twitter
+
+### 1. Extract Twitter Data
+
+- Using the **`rtweet`** package we can access Twitter's API and pull all tweets using the **#HR** hashtag  over the past 9 days (Twitter's API historical limit for extraction)&lt;sup&gt;2&lt;/sup&gt;
+&lt;br&gt;&lt;/br&gt;
+
+.footnote[&lt;sup&gt;2&lt;/sup&gt; The **`academictwitteR`** package overcomes this limit but requires academic credentials and project registration with twitter]
+
+
+```r
+library(rtweet)
+HR_rt &lt;- search_tweets(
+  "#HR", n = 20000, include_rts = FALSE)
+```
+
+
+```
+## # A tibble: 5 x 3
+##   created_at          screen_name text                                   
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;                                  
+## 1 2021-09-13 15:39:06 lizwebercmc "We are researching the impact of boar~
+## 2 2021-09-08 07:04:06 lizwebercmc "It's Time for #HRProfessionals to Sto~
+## 3 2021-09-05 18:19:06 lizwebercmc "#Leaders don't be surprised if #HR sa~
+## 4 2021-09-09 17:04:06 lizwebercmc "Stop Wasting Money &amp;amp; Become an As~
+## 5 2021-09-09 17:41:07 lizwebercmc "Spending time today in 1-on-1 #Execut~
+```
+
+---
+
+### 2. Pre-process Text 
+
+- Subset a few columns for a smaller dataset
+
+
+```r
+HR_rt_s &lt;- HR_rt %&gt;% select(created_at, screen_name, text)
+```
+
+```
+## # A tibble: 4 x 3
+##   created_at          screen_name text                                   
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;                                  
+## 1 2021-09-13 15:39:06 lizwebercmc "We are researching the impact of boar~
+## 2 2021-09-08 07:04:06 lizwebercmc "It's Time for #HRProfessionals to Sto~
+## 3 2021-09-05 18:19:06 lizwebercmc "#Leaders don't be surprised if #HR sa~
+## 4 2021-09-09 17:04:06 lizwebercmc "Stop Wasting Money &amp;amp; Become an As~
+```
+--
+- Make lowercase
+
+```r
+library(stringr)
+HR_rt_s %&gt;%
+* mutate(text = str_to_lower(text))
+```
+
+```
+## # A tibble: 4 x 3
+##   created_at          screen_name text                                   
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;                                  
+## 1 2021-09-13 15:39:06 lizwebercmc "we are researching the impact of boar~
+## 2 2021-09-08 07:04:06 lizwebercmc "it's time for #hrprofessionals to sto~
+## 3 2021-09-05 18:19:06 lizwebercmc "#leaders don't be surprised if #hr sa~
+## 4 2021-09-09 17:04:06 lizwebercmc "stop wasting money &amp;amp; become an as~
+```
+
+---
+
+### 2. Pre-process Text 
+
+
+```
+## # A tibble: 5 x 3
+##   created_at          screen_name text                                   
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;                                  
+## 1 2021-09-13 15:39:06 lizwebercmc "we are researching the impact of boar~
+## 2 2021-09-08 07:04:06 lizwebercmc "it's time for #hrprofessionals to sto~
+## 3 2021-09-05 18:19:06 lizwebercmc "#leaders don't be surprised if #hr sa~
+## 4 2021-09-09 17:04:06 lizwebercmc "stop wasting money &amp;amp; become an as~
+## 5 2021-09-09 17:41:07 lizwebercmc "spending time today in 1-on-1 #execut~
+```
+--
+- Remove punctuation
+
+```r
+HR_rt_s %&gt;%
+  mutate(text = str_to_lower(text) %&gt;%
+*        str_remove_all("[:punct:]"))
+```
+
+```
+## # A tibble: 5 x 3
+##   created_at          screen_name text                                   
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;                                  
+## 1 2021-09-13 15:39:06 lizwebercmc "we are researching the impact of boar~
+## 2 2021-09-08 07:04:06 lizwebercmc "its time for hrprofessionals to stop ~
+## 3 2021-09-05 18:19:06 lizwebercmc "leaders dont be surprised if hr says ~
+## 4 2021-09-09 17:04:06 lizwebercmc "stop wasting money amp become an asse~
+## 5 2021-09-09 17:41:07 lizwebercmc "spending time today in 1on1 executive~
+```
+
+---
+
+### 2. Pre-process Text 
+
+
+```
+## # A tibble: 5 x 3
+##   created_at          screen_name text                                   
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;                                  
+## 1 2021-09-13 15:39:06 lizwebercmc "we are researching the impact of boar~
+## 2 2021-09-08 07:04:06 lizwebercmc "its time for hrprofessionals to stop ~
+## 3 2021-09-05 18:19:06 lizwebercmc "leaders dont be surprised if hr says ~
+## 4 2021-09-09 17:04:06 lizwebercmc "stop wasting money amp become an asse~
+## 5 2021-09-09 17:41:07 lizwebercmc "spending time today in 1on1 executive~
+```
+--
+- Remove digits
+
+```r
+HR_rt_s %&gt;%
+  mutate(text = str_to_lower(text) %&gt;%
+         str_remove_all("[:punct:]") %&gt;%
+*        str_remove_all("[:digit:]"))
+```
+
+```
+## # A tibble: 5 x 3
+##   created_at          screen_name text                                   
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;                                  
+## 1 2021-09-13 15:39:06 lizwebercmc "we are researching the impact of boar~
+## 2 2021-09-08 07:04:06 lizwebercmc "its time for hrprofessionals to stop ~
+## 3 2021-09-05 18:19:06 lizwebercmc "leaders dont be surprised if hr says ~
+## 4 2021-09-09 17:04:06 lizwebercmc "stop wasting money amp become an asse~
+## 5 2021-09-09 17:41:07 lizwebercmc "spending time today in on executiveco~
+```
+
+---
+
+### 2. Pre-process Text 
+
+- Filter out tweets beginning with `RT` (retweets) while removing URLs
+and characters other than natural language
+
+
+```r
+HR_rt_s &lt;- HR_rt_s %&gt;%
+* filter(!str_detect(text, "^RT")) %&gt;%
+  mutate(text = str_to_lower(text) %&gt;%  
+           str_remove_all("[:punct:]") %&gt;%
+           str_remove_all("[:digit:]") %&gt;%
+*          str_replace_all("https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;amp;|&amp;lt;|&amp;gt;|RT|https", ""))
+```
+
+---
+
+### 3. Tidy and refine
+
+- Put into *tidy* format: **a table with one-token-per-row**. A token is a meaningful unit of text, such as a word, sentence, or paragraph. 
+
+
+```r
+library(tidytext)
+
+HR_rt_s %&gt;%
+* unnest_tokens(word, text)
+```
+
+```
+## # A tibble: 457,586 x 3
+##    created_at          screen_name word       
+##    &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;      
+##  1 2021-09-13 15:39:06 lizwebercmc we         
+##  2 2021-09-13 15:39:06 lizwebercmc are        
+##  3 2021-09-13 15:39:06 lizwebercmc researching
+##  4 2021-09-13 15:39:06 lizwebercmc the        
+##  5 2021-09-13 15:39:06 lizwebercmc impact     
+##  6 2021-09-13 15:39:06 lizwebercmc of         
+##  7 2021-09-13 15:39:06 lizwebercmc boards     
+##  8 2021-09-13 15:39:06 lizwebercmc leaders    
+##  9 2021-09-13 15:39:06 lizwebercmc amp        
+## 10 2021-09-13 15:39:06 lizwebercmc planning   
+## # ... with 457,576 more rows
+```
+
+---
+
+### 3. Tidy and refine text
+
+- Remove frequently used **stop-words** (e.g., "the", "a", "is") and filter tokens without letters. After initial screening removed the words **hr** and **amp** (html authoring tag). 
+
+
+```r
+tidy_HR &lt;- HR_rt_s %&gt;%
+  unnest_tokens(word, text) %&gt;%
+* filter(!word %in% stop_words$word,
+        str_detect(word, "[a-z]"),
+*       word != "hr", word != "amp")
+head(tidy_HR)
+```
+
+```
+## # A tibble: 6 x 3
+##   created_at          screen_name word       
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;      
+## 1 2021-09-13 15:39:06 lizwebercmc researching
+## 2 2021-09-13 15:39:06 lizwebercmc impact     
+## 3 2021-09-13 15:39:06 lizwebercmc boards     
+## 4 2021-09-13 15:39:06 lizwebercmc leaders    
+## 5 2021-09-13 15:39:06 lizwebercmc planning   
+## 6 2021-09-13 15:39:06 lizwebercmc today's
+```
+
+
+---
+
+### 4. Word Frequency
+
+.pull-left[
+
+```r
+HR_freq &lt;- tidy_HR %&gt;% 
+  count(word, sort = TRUE) 
+head(HR_freq)
+```
+
+```
+## # A tibble: 6 x 2
+##   word               n
+##   &lt;chr&gt;          &lt;int&gt;
+## 1 leadership      1846
+## 2 job             1803
+## 3 hiring          1678
+## 4 jobs            1641
+## 5 humanresources  1600
+## 6 business        1409
+```
+
+
+```r
+HR_freq %&gt;%
+  filter(n &gt; 500) %&gt;%
+  mutate(word = reorder(word, n)) %&gt;%
+  ggplot(aes(x = word, y = n)) +
+  geom_bar(stat = "identity") +
+  xlab(NULL) +
+  coord_flip() +
+  ggtitle("Common Words for HR Hashtags (September, 2021)") +
+  theme_classic()
+```
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-w1-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+### 4. Word Frequency - Word Cloud
+.pull-left[
+
+```r
+library(wordcloud) # for making wordcloud
+library(viridis)   # color palette
+
+HR_freq %&gt;% 
+  with(wordcloud(
+    word, n, max.words = 30, 
+    colors = plasma(n=15, direction = -1),
+    rot.per = .5))
+```
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/unnamed-chunk-82-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+### 5. Sentiment
+
+Append analysis of lexical valence using a sentiment dictionary (e.g., AFINN, nrc, bing) with **`inner_join`**. The following visual shows which words from HR tweets most often contributed to positive and negative opinions or sentiment. 
+
+
+```r
+hr_sentiment &lt;- tidy_HR %&gt;%
+* inner_join(get_sentiments("bing"))
+```
+
+
+```
+## # A tibble: 4 x 4
+##   created_at          screen_name word        sentiment
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;    
+## 1 2021-09-13 15:39:06 lizwebercmc challenging negative 
+## 2 2021-09-08 07:04:06 lizwebercmc free        positive 
+## 3 2021-09-09 17:04:06 lizwebercmc wasting     negative 
+## 4 2021-09-09 17:41:07 lizwebercmc helping     positive
+```
+
+---
+
+### 5. Sentiment
+
+Append analysis of lexical valence using a sentiment dictionary (e.g., AFINN, nrc, bing) with **`inner_join`**. The following visual shows which words from HR tweets most often contributed to positive and negative opinions or sentiment. 
+
+.pull-left[
+
+```r
+hr_sentiment &lt;- tidy_HR %&gt;%
+* inner_join(get_sentiments("bing"))
+```
+
+
+```
+## # A tibble: 4 x 4
+##   created_at          screen_name word        sentiment
+##   &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;    
+## 1 2021-09-13 15:39:06 lizwebercmc challenging negative 
+## 2 2021-09-08 07:04:06 lizwebercmc free        positive 
+## 3 2021-09-09 17:04:06 lizwebercmc wasting     negative 
+## 4 2021-09-09 17:41:07 lizwebercmc helping     positive
+```
+
+
+```r
+hr_sentiment %&gt;%
+  count(sentiment, word) %&gt;%
+  ungroup() %&gt;%
+  filter(n &gt;= 75) %&gt;%
+  mutate(n = ifelse(
+    sentiment == "negative", -n, n)) %&gt;%
+  mutate(word = reorder(word, n)) %&gt;%
+  ggplot(aes(n, word, fill = sentiment)) +
+  geom_col(show.legend = F) +
+  labs(x = "Contribution to sentiment", y = NULL)
+```
+]
+--
+.pull-right[
+&lt;img src="Orientation_files/figure-html/ggplot-hrsent-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+### 5. Leadership Sentiment (most common word)
+
+.pull-left[
+
+Subset tweets to those mentioning "leader", append and count sentiment, and then recast into a matrix for a cloud comparison.
+
+```r
+HR_rt_s %&gt;% 
+  filter(str_detect(text, "leader")) %&gt;%  #extract leader tweets
+  unnest_tokens(word, text) %&gt;%
+  filter(!word %in% stop_words$word, 
+        str_detect(word, "[a-z]"),
+        word != "hr", word != "amp") %&gt;%
+  inner_join(get_sentiments("bing")) %&gt;%
+  count(word, sentiment, sort = TRUE) %&gt;%
+  reshape2::acast(word ~ sentiment, value.var = "n", fill = 0) %&gt;%
+  comparison.cloud(colors = c("gray20", "gray80"),
+                   max.words = 100)
+```
+]
+
+.pull-right[
+&lt;img src="Orientation_files/figure-html/word-c1-out-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+---
+
+### 6. Bigram Network
+
+
+&lt;img src="Orientation_files/figure-html/unnamed-chunk-88-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### 7. Topic Modeling
+
+Find a mixture of words associated with different topics while determining the mixture of topics describing each document. Akin to factor analysis but for text in documents. 
+&lt;img src="Orientation_files/figure-html/unnamed-chunk-89-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Mine That Text
+
+- Books
+ - [Text Mining with R](https://www.tidytextmining.com/)
+ 
+ - [Text Mining for Social and Behavioral Research](https://books.psychstat.org/textmining/index.html)
+ 
+- Data Camp
+ - [Introduction to Text Analysis in R](https://app.datacamp.com/learn/courses/introduction-to-text-analysis-in-r)
+ 
+ - [Text Mining with Bag-of-Words in R](https://app.datacamp.com/learn/courses/text-mining-with-bag-of-words-in-r)
+ 
+ - [Introduction to Natural Language Processing in R](https://app.datacamp.com/learn/courses/introduction-to-natural-language-processing-in-r)
+ 
+.center[&lt;img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gif/words.gif?raw=true" width="350" height="200"&gt;]
+
+---
+
+# Thank You!
+
+Email:    simonetd@montclair.edu
+
+Homepage: [https://theleaplab.weebly.com/](https://theleaplab.weebly.com/)
+
+Slides created via the R package **`xaringan`**
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

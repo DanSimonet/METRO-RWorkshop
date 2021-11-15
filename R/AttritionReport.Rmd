@@ -1,0 +1,76 @@
+---
+title: "Income and Attrition"
+author: "Dan Simonet"
+date: "10/31/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+```{r echo = F}
+library(tidyverse)
+library(sjPlot)
+library(afex)
+library(kableExtra)
+
+HR_dat <- read_csv("https://raw.githubusercontent.com/DanSimonet/METRO-Workshop/main/IBM_HR_Data.csv")
+
+HR_dat_s <- HR_dat %>% 
+  filter(DistanceFromHome <= 28) %>%
+   mutate(OvTenure = (YearsInCurrentRole + YearsSinceLastPromotion + YearsWithCurrManager)/3, 
+          Attrition = factor(Attrition),
+          Department = factor(Department),
+          Gender = factor(Gender)) %>%
+  select(-contains("Years")) %>%
+  mutate(id = row_number())  
+
+HR_dat_ss <- HR_dat_s %>% mutate(Department = abbreviate(Department))
+inc_aov_s <- aov_car(MonthlyIncome ~ Department * Gender + Error(id),  #add Error(id)
+                   data = HR_dat_ss)
+```
+
+The current report analyzes income disparities and attrition for the IBM workforce. the sample contains `r nrow(HR_dat)` employees spread across `r n_distinct(HR_dat$Department)` departments.  
+
+### ANOVA Analysis
+
+A 2 x 3 between-group ANOVA was conducted to evaluate income differences by department and gender. Results suggest no significant effect for gender, $F_{1, 1437} = .9038, p = .34$, or the interaction, $F_{2,1437} = .42, p = .66$, but a marginal effect for department, $F_{2, 1437} = 2.59, p = .08$, with sales (*M* = $6,953) trending towards higher monthly pay than HR (*M* = $6,655) and research (*M* = $6,289).
+
+```{r echo = F}
+inc_aov_s <- aov_car(MonthlyIncome ~ Department * Gender + Error(id),
+                   data = HR_dat_ss)
+kable(nice(inc_aov_s)) %>% kable_classic_2(full_width = F, position = "left")
+```
+
+### Post-Hocs 
+
+Eyeballing narrower sub-group differences suggests male researchers make less than male salesmen ($\Delta M=\$839.36$) and female HR reps ($\Delta M=\$1,147.91$). However, Tukey's HSD test for multiple comparisons on estimated marginal means across all sub-group pairings provides further evidence of no significant pay differences.
+
+```{r echo = F}
+library(emmeans)
+ph <- emmeans(inc_aov_s, c("Department", "Gender"))
+plot(ph)
+```
+
+### Attrition
+
+A logistic regression shows improvements in monthly income, work life balance, and job satisfaction all uniquely contribute to reductions in attrition. Odds ratios suggest a point increase in balance or satisfaction leads to a 22% reduction in the odds of turnover whereas making $1000 extra per month leads to a 12% drop. 
+
+```{r echo = F}
+tur_mod <- glm(Attrition ~ I(MonthlyIncome/1000) + WorkLifeBalance +  JobSatisfaction, data = HR_dat_s, family = "binomial")
+tab_model(tur_mod)
+```
+
+<br></br>
+The following plot shows how the probability of attrition changes across predictor levels. Those making over $15,000 are likely to stay regardless of job satisfaction and balance. However, for those making $5,000 or less a month the differences in attitudinal extremes translates into a nearly 20% reduction in probability of departure. 
+
+```{r echo = F}
+library(ggeffects)
+
+tur_mod_1 <- glm(Attrition ~ MonthlyIncome + WorkLifeBalance +  JobSatisfaction, data = HR_dat_s, family = "binomial")
+
+fpr <- ggpredict(tur_mod_1, c("MonthlyIncome", "WorkLifeBalance", "JobSatisfaction"))
+plot(fpr)
+```
+

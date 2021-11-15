@@ -1,0 +1,1674 @@
+---
+title: "METRO, Intro to R Workshop"
+author: "Dan Simonet"
+institute: "Associate Professor, I/O Psychology"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "MSU", "rutgers-fonts", "ninjutsu"]
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: yes
+      countIncrementalSlides: no
+---
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+library(xaringanExtra)
+style_mono_light(
+  base_color = "#23395b", 
+  link_color = "#F97B64")
+```
+
+```{r setup, include=FALSE, include=FALSE, cache=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align = "center",  
+  fig.asp = 9/16,
+  out.width = "95%",
+  dpi= 300,
+  cache=TRUE, 
+  warning=FALSE, message=FALSE,
+  echo=FALSE
+  )
+```
+
+class: inverse, center, middle
+
+# Who Am I
+
+---
+
+# R Journey
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+.panelset[
+.panel[.panel-name[Beginning]
+
+<div style="text-align: center;">
+<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/SPSS.png?raw=true" width = "300" height = "200" style="margin: 60px">
+<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Excel.jpg?raw=true" width = "300" height = "200" style="margin: 60px">
+</div>
+]
+
+.panel[.panel-name[Robust Stats]
+
+<div style="text-align: center;">
+<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/RobustStats.jpg?raw=true" width="300" height="400" style="margin: 40px">
+</div>
+]
+
+.panel[.panel-name[Polynomial Paper]
+
+<div style="text-align: center;">
+<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/RSAforPersonality.png?raw=true" width="400" height="375" style="margin: 40px">
+</div>
+
+.footnote[Source: Koppensteiner et al. (2014)]
+
+]
+
+.panel[.panel-name[New Possibilities]
+
+<div style="text-align: center; vertical-align: text-top">
+<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Network.png?raw=true" width="700" height="445" style="margin: 0px 0px 30px 0px">
+</div>
+]
+]
+
+---
+
+class: inverse, center, middle
+
+# R Applications
+
+---
+
+class: inverse, center, middle
+background-image: url("https://github.com/DanSimonet/METRO-Workshop/blob/main/img/2020_29_Astronauts_Cedric.png?raw=true")
+background-size: contain
+
+# Visuals
+
+.footnote[.tiny[.green[Image Credit: ][Cedric Scherer](https://www.behance.net/gallery/100683383/Travelling-to-Outer-Space)]]
+
+---
+
+class: inverse, top, middle
+background-image: url("https://raw.githubusercontent.com/DanSimonet/METRO-Workshop/main/img/got-network-algorithm.png")
+background-position: right
+background-size: contain
+
+# Algorithms
+
+.footnote[.tiny[.white[Image Credit: ][Andrew Beveridge](https://www.maa.org/sites/default/files/pdf/Mathhorizons/NetworkofThrones%20%281%29.pdf)]]
+
+---
+
+# Reports
+
+<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Rep1.png?raw=true" width = "450" height = "500" align="left">
+<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Rep2.png?raw=true" width = "400" height = "500" align="right">
+
+---
+
+# Why R?
+
+1. **Free**: As in Beer, as in Speech `r emo::ji("beer")`
+
+2. **AMAZING** community continuously contributing new packages `r emo::ji("hugs")`
+
+3. **Comprehensive**: Clean, visualize, analyze, and communicate. Can even order pizza `r emo::ji("pizza")`
+
+4. **Level Up**: Programming superpower - generate new solutions `r emo::ji("muscle")`
+
+5. **Speed Up**: Reproducibility and automation `r emo::ji("rocket")`
+
+--
+
+.center[**Employability**]
+
+.center[<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gif/LikeaBoss.gif?raw=true" width="500" height="200">]
+
+---
+
+# Cons
+
+- **Unfamiliarity**: Learning a new language (can) suck. Go easy on yourself and R.
+
+  - Quick Tips: Start slow with Base R books and do **lots** of practice problems. Suggestions include:
+     - [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)
+     
+     - [Learning Statistics with R](https://learningstatisticswithr.com/)
+     
+     - [Quick R](https://www.statmethods.net/index.html)
+
+--
+
+- **Paradox of Choice**: R invariably has multiple ways to do the same thing. Example includes assigning objects with <- and/or = (convention is to use <-).
+
+  - Quick tip: Just pick whatever method/package looks easiest to you. At same time, don't be scared to mix and match. 
+
+---
+# Learning Curve: Takes Work
+
+#### Complicated Relationship   
+![](https://github.com/DanSimonet/DanSimonet.github.io/blob/master/Figures/rrelationships_R.png?raw=true)  
+
+.footer[source: https://bookdown.org/ndphillips/YaRrr/rrelationship.html]
+---
+
+# Learning Curve: Takes Work
+
+#### Zero to Hero
+![](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gosling.png?raw=true)
+---
+
+# Help
+
+_Very_ friendly communities and forums online. SO, RLadies, Twitter, etc.
+
+You can also look at the help documentation.
+
+```r
+?plot
+example(plot)
+library(ggplot2)
+example(geom_contour)
+demo("graphics", package = "graphics")
+```
+
+Most packages also provide _vignettes_ (mini use guides). [Example](https://lrberge.github.io/fixest/articles/fixest_walkthrough.html).
+
+---
+
+# Agenda
+
+.pull-left[
+### R and RStudio
+
+### Data Manipulation and Descriptives
+
+### Visualization
+
+### Statistics and Markdown Reports
+
+### New Frontiers: NLP and Twitter
+]
+
+.pull-right[
+![agenda](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/meeting-agenda.jpg?raw=true)
+]
+
+---
+
+# Requirements
+
+We will be using the [RStudio Cloud](https://rstudio.cloud/) which has all data and packages installed. Must create an account, sign in, and access the following project:
+
+-https://rstudio.cloud/project/3226006
+
+Once accessed (a) click on the Load.R script, (b) highlight all the syntax, and (c) click the Run icon. 
+
+.center[<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/LoadR.PNG?raw=true" width="1000" height="350">]
+
+---
+# Requirements
+
+Alternatively, can install R and R studio locally on your machine and install the packages as we progress.
+
+☑ Installed [R](https://www.r-project.org/).
+
+☑ Installed [RStudio](https://www.rstudio.com/products/rstudio/download/preview/).
+
+---
+
+class: inverse, center, middle
+
+# R and R Studio
+
+---
+
+class: top, left
+background-image: url("https://github.com/DanSimonet/METRO-Workshop/blob/main/img/rstudio-anatomy.png?raw=true")
+background-size: contain
+
+---
+# Base R
+.pull-left[
+#### Maths
+```{r, eval = F, echo = T} 
+1+1
+sqrt(4)
+5^2
+```
+#### Objects
+```{r, eval = F, echo = T}
+x <- 3 + 5
+x * 2
+x + x
+```
+#### Vectorization
+```{r, eval = F, echo = T}
+y <- c(1,2,3,4,5)  "combine" to vector
+z <- seq(0,10, by = 2) **seq** func
+2 * y
+y/z
+```
+]
+
+--
+
+.pull-right[
+####Functions
+
+```{r eval = F, echo = T}
+mean(1:5) # base
+
+add_two <- function(x){  # custom
+ x+2
+}
+```
+
+####Packages
+```{r eval = F, echo = T}
+library(ggplot2)
+
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = F) +
+  labs(x = "Horsepower",
+       y = "Miles per Gallon (MPG)")
+```
+]
+
+---
+
+class: inverse, center, middle
+
+# Data Manipulation
+
+---
+
+# Load and View Data
+
+Use **`install.packages`** and **`library`** to install and load packages. **`read_csv`** function parses and imports **.csv** files.  
+
+```{r tidyver, error=FALSE, warning=FALSE, message=FALSE, results = 'hide', echo = T}
+# Load Tidyverse and IBM HR Data
+
+install.packages("tidyverse")
+library(tidyverse)
+HR_dat <- read_csv("https://raw.githubusercontent.com/DanSimonet/METRO-Workshop/main/Data/IBM_HR_Data.csv")
+```
+
+--
+
+Quick data examination:
+- First 5 rows with **`head`**
+- Structure with **`glimpse`**
+- Variable labels with **`names`**
+
+```{r, eval = F}
+head(HR_dat)
+glimpse(HR_dat)
+names(HR_dat)
+```
+
+---
+
+# Data Science Workflow with **Tidyverse**
+
+![](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/tidyverseworkflow.png?raw=true)
+
+---
+
+# The pipe %>% 
+
+```{r, echo = T}
+mean(1:10)
+```
+
+```{r, echo = T}
+1:10 %>% mean()
+```
+
+---
+
+# The pipe %>%
+
+```{r, eval = F, echo = T}
+data %>%
+  do_something(.) %>%
+  do_another_thing(.) %>%
+  do_last_thing(.)
+```
+
+**`do_last_thing(do_something_else(do_something(data)))`** is equivalent to:
+
+ - **`data %>% do_something(data = .)`**
+ 
+--
+
+ - **`%>% do_something_else(.)`**
+ 
+--
+
+ - **`%>% do_a_third_thing(.)`**
+ 
+--
+
+<br></br>
+For example, we may run several cleaning operations and store as new dataset.
+```{r, eval = F, echo = T}
+new_cars <- mtcars %>%
+  mutate(cyl = factor(cyl)) %>%   # convert to factor
+  select(mpg, cyl, hp)            # reduce to a few variables
+```
+
+---
+
+# **`Dplyr`**: Data Wrangling
+
+.pull-left[
+Data sets are messy, large, and disorganized
+
+**`dplyr`** provides common data manipulation **verbs** 
+which are applied to tabular data. Includes:
+
+- Extracting and renaming variables
+
+- Extracting a subset of rows
+
+- Ordering data from high to low
+
+- Calculating new variables (from existing) 
+
+- Calculating summary statistics
+
+- Merging different data frames
+
+- And more!
+
+]
+
+.pull-right[
+![dplyr](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/dplyr_schema.png?raw=true)
+]
+
+---
+
+# Select and Drop Columns
+.pull-left[
+```{r, eval = F, echo = T}
+HR_dat %>% select(Age, JobLevel, Attrition)
+```
+```{r, echo = F}
+HR_dat %>% select(Age, JobLevel, Attrition) %>% print(n=5)
+```
+
+```{r, eval = F, echo = T}
+HR_dat %>% select(Age:BusinessTravel)
+```
+```{r, echo = F}
+HR_dat %>% select(Age:BusinessTravel) %>% print(n=5)
+```
+]
+
+--
+
+.pull-right[
+```{r, eval = F, echo = T}
+HR_dat %>% select(-Attrition)
+```
+```{r, echo = F}
+HR_dat %>% select(-Attrition) %>% print(n=5, n_extra = 1, width = 50)
+```
+
+```{r, eval = F, echo = T}
+HR_dat %>% select(contains("Job"))
+```
+```{r, echo = F}
+HR_dat %>% select(contains("Job")) %>% print(n=5, width = 40)
+```
+]
+---
+# Useful Select Functions
+
+### **Red functions come in dplyr**
+
+```{r echo = FALSE, results = 'asis'}
+library(knitr)
+library(kableExtra)
+
+d <- tibble(Function = c("-", ":", "contains()", "ends_with()",
+                  "everything()", "matches()", "num_range()",
+                  "one_of()", "starts_with()"),
+            Explanation = c("Select everything but",
+                  "Select range",
+                  "Select columns whose name contains a character string",
+                  "Select columns whose name ends with a string",
+                  "Select every column",
+                  "Select columns who name matches a regular expression",
+                  "Select columns names x1, x2, x3, x4, x5",
+                  "Select columns whose names are in a group of names",
+                  "Select columns whose name starts with a character string"))
+
+d %>% kbl() %>% kable_minimal(full_width = T, html_font = "Yanone Kaffeesatz", font_size = 28) %>%
+    row_spec(3:9, color = "white", background = "#D7261E")
+
+```
+
+---
+
+# Filter Cases
+
+Select only males
+
+```{r, eval = F, echo = T}
+HR_dat %>% filter(Gender == "Male")
+```
+```{r, eval = T, echo = F}
+HR_dat %>% filter(Gender == "Male") %>% relocate(Gender) %>% print(width = 50, n_extra = 1)
+```
+
+---
+
+# Filter Cases
+
+Select only employees over 40
+
+```{r, eval = F, echo = T}
+HR_dat %>% filter(Age > 40)
+```
+```{r, eval = T, echo = F}
+HR_dat %>% filter(Age > 40) %>% relocate(Age) %>% print(width = 50, n_extra = 1)
+```
+
+---
+
+# Filter Cases
+
+Select only employees who are Male and 40
+
+```{r, eval = F, echo = T}
+HR_dat %>% filter(Gender == "Male", Age > 40)
+```
+```{r, eval = T, echo = F}
+HR_dat %>% filter(Gender == "Male", Age > 40) %>% relocate(Gender, Age) %>% print(width = 50, n_extra = 1)
+```
+
+---
+
+# Filter: Logical Tests in R
+
+.pull-left[
+###?Comparison
+```{r echo = F, results='asis'}
+log <- tibble(Function = c("<", ">", "==", "<=",
+                  ">=", "!=", "%in%",
+                  "is.na", "!is.na"),
+            Explanation = c("Less than",
+                  "Greater than",
+                  "Equal to",
+                  "Less than or equal to",
+                  "Greater than or equal to",
+                  "Not equal to",
+                  "Group membership",
+                  "Is NA",
+                  "is not NA"))
+
+log %>% kbl(col.names = NULL) %>% kable_classic(full_width = F, html_font = "Yanone Kaffeesatz", font_size = 30,  position = "float_left") %>%
+  column_spec(1, width = "5em") %>%
+    row_spec(1:9, background = "#F5F5F5")
+```
+]
+
+.pull-right[
+###?base::Logic
+```{r echo = F, results='asis'}
+log1 <- tibble(Function = c("&", "|", "xor", "!",
+                  "any", "all"),
+            Explanation = c("boolean and",
+                  "boolean or",
+                  "exactly or",
+                  "not",
+                  "any true",
+                  "all true"))
+
+log1 %>% kbl(col.names = NULL) %>% kable_classic(full_width = F, html_font = "Yanone Kaffeesatz", font_size = 30,  position = "float_left") %>%
+  column_spec(1, width = "5em") %>%
+    row_spec(1:6, background = "#F5F5F5")
+```
+]
+---
+
+# Mutate: Create New Variables
+
+- Data transformation (log, square root, %)
+
+- Composites (addition, multiplication)
+
+- Change factor orders
+
+- Center or lag variables
+
+```{r eval = F, echo = T}
+HR_dat %>%
+  mutate(AnnualIncome = MonthlyIncome * 12, 
+         WorkLifeAtComp = YearsAtCompany/TotalWorkingYears)
+```
+```{r eval = T, echo = F}
+HR_dat %>%
+  mutate(AnnualIncome = MonthlyIncome * 12,
+         LifeAtComp = YearsAtCompany/TotalWorkingYears) %>%
+  select(MonthlyIncome, AnnualIncome, TotalWorkingYears, YearsAtCompany, LifeAtComp) %>% 
+  print(n = 5)
+```
+
+---
+
+# Mutate
+
+Convert attrition to a factor (for analyses) and average correlated tenure variables<sup>1</sup>
+<br></br>
+.footnote[<sup>1</sup> To use `mean` for individual rows across columns (e.g,. scoring scales) use `rowwise` prior to mutate]
+
+```{r eval = F, echo = T}
+HR_dat %>%
+  mutate(Attrition = factor(Attrition),
+         TenComp = (YearsAtCompany + YearsInCurrentRole + YearsWithCurrManager)/3)
+```
+```{r eval = T, echo = F}
+HR_dat %>%
+  mutate(Attrition = factor(Attrition),
+         TenComp = (YearsAtCompany + YearsInCurrentRole + YearsWithCurrManager)/3) %>%
+  select(Attrition, YearsAtCompany, YearsInCurrentRole, YearsWithCurrManager, TenComp) %>%
+  print(n = 5)
+```
+<br></br>
+---
+
+# Arrange
+
+Rearrange orders of values based on data in columns
+
+```{r eval = F, echo = T}
+HR_dat %>% arrange(MonthlyIncome)
+```
+
+.pull-left[
+```{r echo = F}
+HR_small <- HR_dat[1:10,] %>% select(Age, Department, DistanceFromHome, MonthlyIncome) %>%
+  mutate(ranks = dense_rank(MonthlyIncome))
+
+HR_small %>% kbl() %>% remove_column(5) %>%
+  kable_classic(full_width = F, html_font = "Yanone Kaffeesatz", 
+                font_size = 20,  position = "float_left") %>%
+  column_spec(1:4, color = "white",
+              background = spec_color(HR_small$ranks)) 
+```
+]
+
+.pull-right[
+```{r echo = F}
+HR_small2 <- HR_small %>% arrange(MonthlyIncome) 
+
+HR_small2 %>% kbl() %>% remove_column(5) %>%
+  kable_classic(full_width = F, html_font = "Yanone Kaffeesatz", 
+                font_size = 20,  position = "float_right") %>%
+  column_spec(1:4, color = "white",
+              background = spec_color(HR_small2$ranks)) 
+```
+]
+
+---
+
+# Arrange
+
+Can change from highest to lowest with `desc`
+
+```{r eval = F, echo = T}
+HR_dat %>% arrange(desc(MonthlyIncome))
+```
+
+.left-pull[
+```{r echo = F}
+HR_small <- HR_dat[1:10,] %>% select(Age, Department, DistanceFromHome, MonthlyIncome) %>%
+  mutate(ranks = dense_rank(MonthlyIncome))
+
+HR_small %>% kbl() %>% remove_column(5) %>%
+  kable_classic(full_width = F, html_font = "Yanone Kaffeesatz", 
+                font_size = 20,  position = "float_left") %>%
+  column_spec(1:4, color = "white",
+              background = spec_color(HR_small$ranks)) 
+```
+]
+
+.right-pull[
+```{r echo = F}
+HR_small2 <- HR_small %>% arrange(desc(MonthlyIncome)) 
+
+HR_small2 %>% kbl() %>% remove_column(5) %>%
+  kable_classic(full_width = F, html_font = "Yanone Kaffeesatz", 
+                font_size = 20,  position = "float_right") %>%
+  column_spec(1:4, color = "white",
+              background = spec_color(HR_small2$ranks)) 
+```
+]
+
+---
+
+# Combining `Dplyr` Verbs: Clean Data for Analyses
+
+Filter out distant employees
+
+```{r, echo = T, eval = F}
+HR_dat %>% 
+  filter(DistanceFromHome <= 28) #<<
+```
+
+```{r, echo = F, eval = T}
+HR_dat %>% 
+  filter(DistanceFromHome <= 28) %>% 
+  select(Age, Attrition, DistanceFromHome, Department, YearsAtCompany) %>%
+  slice(1:6) %>% print(n_extra = 4)
+```
+
+---
+
+# Combining `Dplyr` Verbs: Clean Data for Analyses
+
+Filter out distant employees and create new tenure variables.
+
+```{r, echo = T, eval = F}
+HR_dat %>% 
+  filter(DistanceFromHome <= 28) %>%
+  mutate(                                                         #<<
+    OvTenure = (YearsInCurrentRole + YearsSinceLastPromotion + YearsWithCurrManager)/3)     #<<                   
+```
+
+```{r, echo = F, eval = T}
+HR_dat %>% 
+  filter(DistanceFromHome <= 28) %>% 
+   mutate(OvTenure = (YearsInCurrentRole + YearsSinceLastPromotion + YearsWithCurrManager)/3) %>%
+  select(Age, Attrition, DistanceFromHome, Department, OvTenure, YearsAtCompany) %>%
+  slice(1:6) %>% print(n_extra = 4)
+```
+
+---
+
+# Combining `Dplyr` Verbs: Clean Data for Analyses
+
+Filter out distant employees, create new tenure variables, and recode characters as factors
+
+```{r, echo = T, eval = F}
+HR_dat %>% 
+  filter(DistanceFromHome <= 28) %>%
+  mutate(                                                      
+    OvTenure = (YearsInCurrentRole + YearsSinceLastPromotion + YearsWithCurrManager)/3,
+    Attrition = factor(Attrition),    #<< 
+    Department = factor(Department),  #<< 
+    Gender = factor(Gender))          #<<                   
+```
+
+```{r, echo = F, eval = T}
+HR_dat %>% 
+  filter(DistanceFromHome <= 28) %>% 
+   mutate(OvTenure = (YearsInCurrentRole + YearsSinceLastPromotion + YearsWithCurrManager)/3,
+           Attrition = factor(Attrition),  
+    Department = factor(Department),
+    Gender = factor(Gender)) %>%
+  select(Age, Attrition, DistanceFromHome, Department, OvTenure, YearsAtCompany, Gender) %>%
+  slice(1:6) %>% print(n_extra = 4)
+```
+
+---
+
+# Combining `Dplyr` Verbs: Clean Data for Analyses
+
+Filter out distant employees, create new tenure variables, recode characters as factors, and remove columns with **Years** in the name. Store as new dataframe **`HR_dat_s`**.
+
+```{r, echo = T, eval = T}
+HR_dat_s <- HR_dat %>%       #<<
+  filter(DistanceFromHome <= 28) %>%
+   mutate(OvTenure = (YearsInCurrentRole + YearsSinceLastPromotion + YearsWithCurrManager)/3,
+          Attrition = factor(Attrition),
+          Department = factor(Department),
+          Gender = factor(Gender)) %>%
+  select(-contains("Years"))  #<<
+```
+
+```{r, echo = F, eval = T}
+HR_dat_s %>% slice(1:6) %>% print(n_extra = 4)
+```
+
+---
+
+# Summarize
+
+**Reduces** data frame by taking a vector of values and returning a **single** value. Used to compute tables of summary data such as means, median, and standard deviation. 
+
+```{r echo=T}
+HR_dat %>% summarize(JS_M = mean(JobSatisfaction),  # mean 
+                     JS_SD = sd(JobSatisfaction),   # sd
+                     JS_SE = JS_SD/sqrt(n()),       # standard error
+                     n = n())                       # number participants
+```
+
+---
+
+# Group By and Summarize
+
+Rather than calculate a grand mean we often want means for different departments, conditions, demographics, and so forth. Can use **`group_by`** to summarize data by group. 
+
+```{r echo = T}
+HR_dat %>% 
+  group_by(Department) %>% #<<
+  summarize(JS_M = mean(JobSatisfaction),  
+            JS_SD = sd(JobSatisfaction),   
+            JS_SE = JS_SD/sqrt(n()),       
+            n = n())                       
+```
+
+---
+
+# Descriptives
+
+Many packages provide automatic data summaries (e.g., **`psych`**, **`skimr`**). Suggest **`modelsummary`** for ease, versatility, and customization. Use **`datasummary_skim`** to make a summary table. 
+
+```{r echo = T}
+library(modelsummary)
+datasummary_skim(HR_dat[,c(1, 6, 13, 17, 32)])
+```
+
+--
+
+**`datasummary`** handles non-numeric with **`type = "categorical"`** argument.
+
+```{r}
+datasummary_skim(HR_dat[,c(2,5)], type = "categorical")
+```
+
+---
+class: full-slide-fig, inverse
+```{r}
+HR_dat_sn <- HR_dat
+colnames(HR_dat_sn) <- abbreviate(names(HR_dat), 7) 
+corrplot::corrplot(cor(select_if(HR_dat_sn, is.numeric)), type = 'lower', diag = FALSE, tl.cex = .45)
+# datasummary_correlation(HR_dat)
+```
+.white[.center[Corrplot Package]]
+---
+
+# Become a Data Wizard
+
+[Learn the tidyverse](https://www.tidyverse.org/learn/): books, workshops and online courses
+
+- Selection of books:
+  - [R for Data Science](https://r4ds.had.co.nz/)
+  - [Stat. Inference via Data Science](https://moderndive.com/)
+  - [R Data Mining](https://www.oreilly.com/library/view/r-data-mining/9781787124462/)
+  
+- [Tidy Tuesday Videos](https://www.youtube.com/user/safe4democracy/videos) by D. Robinson, Chief Data Scientist, DataCamp
+
+- [Two-Day workshop materials](https://github.com/cwickham/data-science-in-tidyverse) for Data Science in tidyverse, Rstudio 2019 conference
+
+.center[<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gif/CoolWiz.gif?raw=true" width="400" height="250">]
+
+---
+
+class: inverse, center, middle
+
+# Visualization
+
+---
+
+# `ggplot`: Tableau of R 
+
+```{r}
+
+sum_data <- HR_dat %>% 
+  group_by(JobRole, Attrition) %>%
+  summarize(n = n()) %>%
+  mutate(pct = n/sum(n),
+         lbl = scales::percent(pct))
+
+ggplot(sum_data, aes(x = fct_reorder(factor(abbreviate(JobRole, 15)), pct, min), y = pct, fill = factor(Attrition))) +
+   geom_bar(stat = "identity",
+           position = "fill") +
+  scale_y_continuous(breaks = seq(0, 1, .2), 
+                    label =  scales::percent) +
+  geom_text(aes(label = lbl), 
+            size = 2.5, 
+            color = "white",
+            position = position_stack(vjust = 0.5)) +
+   scale_fill_manual(values = c("#D1190D", "#333333")) +
+  labs(y = "Percent", 
+       fill = "Attrition",
+       x = "Job",
+       title = "Turnover Rates by Job") +
+  theme_minimal() +
+  theme(text = element_text(size=8),
+        axis.text.x = element_text(angle = 45, vjust = 0.90, hjust=1))
+
+```
+
+---
+
+# `ggplot`: Tableau of R 
+Tweak to **geom_bar** property to get frequencies
+<br></br>
+```{r}
+ggplot(sum_data, aes(x = fct_reorder(factor(abbreviate(JobRole, 15)), pct, min), y = n, fill = factor(Attrition))) +
+    geom_bar(stat = "identity") +
+  geom_text(aes(label = n), 
+            size = 2.5, 
+            color = "white",
+            position = position_stack(vjust = 0.5)) +
+   scale_fill_manual(values = c("#D1190D", "#333333")) +
+  labs(y = "N", 
+       fill = "Attrition",
+       x = "Job",
+       title = "Turnover Rates by Job") +
+  theme_minimal() +
+  theme(text = element_text(size=8),
+        axis.text.x = element_text(angle = 45, vjust = 1.1, hjust=1))
+```
+
+---
+
+# Visualization with `ggplot`
+
+**g**rammer of **g**raphics **plot**
+<br><br/>
+
+.center[<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/ggplot-layers-2.png?raw=true" width = 600, height = 400>]
+
+---
+
+# General ggplot syntax
+
+Data, axes (and other aesthetics), and shapes (or geom)
+
+```{r echo = T, fig.dim=c(4.8, 2)}
+ggplot(data = HR_dat, aes(x = MonthlyIncome)) +
+  geom_density(fill = "blue") 
+```
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+```{r ggplot-01, eval = FALSE, echo = TRUE}
+ggplot(data = HR_dat_s) #<<
+```
+First add data
+]
+
+.pull-right[
+```{r ggplot-01-out, ref.label="ggplot-01", echo=FALSE, fig.dim=c(4.8, 4.5)}
+```
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+```{r ggplot-02, eval = FALSE, echo = TRUE}
+ggplot(data = HR_dat_s,
+       aes(y = JobSatisfaction, x = MonthlyIncome)) #<< 
+```
+Second add aesthetics
+]
+
+.pull-right[
+```{r ggplot-02-out, ref.label="ggplot-02", echo=FALSE, fig.dim=c(4.8, 4.5)}
+```
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+```{r ggplot-03, eval = FALSE, echo = TRUE}
+ggplot(data = HR_dat_s,
+       aes(y = JobSatisfaction, x = MonthlyIncome)) +
+  geom_point() #<<
+```
+Three add geometry
+]
+
+.pull-right[
+```{r ggplot-03-out, ref.label="ggplot-03", echo=FALSE, fig.dim=c(4.8, 4.5)}
+```
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+```{r ggplot-04, eval = FALSE, echo = TRUE}
+ggplot(data = HR_dat_s,
+       aes(y = JobSatisfaction, x = MonthlyIncome)) +
+  geom_point(position = "jitter", alpha = .40) + #<<
+  geom_smooth(method = "lm") #<<
+```
+Maybe add jitter, transparency, and regression
+]
+
+.pull-right[
+```{r ggplot-04-out, ref.label="ggplot-04", echo=FALSE, fig.dim=c(4.8, 4.5)}
+```
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+```{r ggplot-05, eval = FALSE, echo = TRUE}
+ggplot(data = HR_dat,
+       aes(y = JobSatisfaction, x = HourlyRate)) + #<<
+  geom_point(position = "jitter", alpha = .40) + 
+  geom_smooth(method = "lm")
+```
+Try another predictor. Minuscule effect. 
+]
+
+.pull-right[
+```{r ggplot-05-out, ref.label="ggplot-05", echo=FALSE, fig.dim=c(4.8, 4.5)}
+```
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+```{r ggplot-06, eval = FALSE, echo = TRUE}
+ggplot(data = HR_dat,
+       aes(y = JobSatisfaction, x = HourlyRate)) + 
+  geom_point(position = "jitter", alpha = .40) + 
+  geom_smooth(method = "lm") +
+  theme_classic() +  #<<
+  theme(text = element_text(size = 16, family = "serif")) +  #<<
+  labs(title = "Hourly Pay Slightly Less Satisfied",  #<<
+       x = "Hourly Rates ($)", #<<
+       y = "Overall Job Satisfaction") #<<
+```
+Modify theme and labels
+]
+
+.pull-right[
+```{r ggplot-06-out, ref.label="ggplot-06", echo=FALSE, fig.dim=c(4.8, 4.5)}
+```
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+```{r ggplot-07, eval = FALSE, echo = TRUE}
+ggplot(data = HR_dat,
+       aes(y = JobSatisfaction, x = HourlyRate)) + 
+  geom_point(position = "jitter", alpha = .40) + 
+  geom_smooth(method = "lm") +
+  facet_wrap(~Department) +    #<<
+  theme_classic() + 
+  theme(text = element_text(size = 16, family = "serif")) +  
+  labs(title = "Hourly Pay Slightly Less Satisfied",
+       x = "Hourly Rates ($)",
+       y = "Overall Job Satisfaction") 
+```
+Add facets
+]
+
+.pull-right[
+```{r ggplot-07-out, ref.label="ggplot-07", echo=FALSE, fig.dim=c(5, 4.5)}
+```
+]
+
+---
+
+# Visualization with `ggplot`
+
+.pull-left[
+```{r ggplot-08, eval = FALSE, echo = TRUE}
+ggplot(data = HR_dat,
+       aes(y = JobSatisfaction, x = HourlyRate, color = Gender)) +   #<<
+  geom_point(position = "jitter", alpha = .40) + 
+  geom_smooth(method = "lm", se = F) +  #<<
+  facet_wrap(~Department) +   
+  theme_classic() + 
+  theme(text = element_text(size = 16, family = "serif"),
+        legend.position = "bottom") +   #<<  
+  labs(title = "Hourly Pay Slightly Less Satisfied",
+       x = "Hourly Rates ($)",
+       y = "Overall Job Satisfaction") 
+```
+Add color based on gender. Remove SE bars
+and move legend to bottom. 
+]
+
+.pull-right[
+```{r ggplot-08-out, ref.label="ggplot-08", echo=FALSE, fig.dim=c(4.8, 4.5)}
+```
+]
+
+---
+
+# Dazzle with `ggplot`
+
+Many online resources. Suggest a general overview of grammar of graphics followed by cookbooks.
+
+- [ggplot2 Grammar Guide](https://evamaerey.github.io/ggplot2_grammar_guide/about)
+
+- [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
+
+- [US Business Analytics](https://uc-r.github.io/ggplot_intro)
+
+- [R Graphics Cookbook](https://r-graphics.org/)
+
+.center[<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gif/oooh-aaah.gif?raw=true" width="400" height="250">]
+
+---
+
+class: inverse, center, middle
+
+# Statistical Reports
+
+---
+
+# Statistical Inference
+
+Want to look at income differences. Two-way table of average monthly income by department and gender using **`dplyr`**.
+
+```{r echo = T}
+HR_dat_s %>%
+  group_by(Department, Gender) %>% #<< 
+  summarize(
+    Income_M = mean(MonthlyIncome),
+    Income_SD = sd(MonthlyIncome),
+    n = n()
+  )
+```
+
+---
+
+# Exploratory Visualization
+
+Visualize the range, central tendency, and quartiles via a **`geom_boxplot`** call
+
+```{r echo = T, out.width = '650px', out.height='400px'}
+ggplot(data = HR_dat_s,                                           # add data
+       aes(x = Department, y = MonthlyIncome, color = Gender)) +  # axes and color by gender 
+  geom_boxplot()                                                  # represent as boxplot
+```
+
+---
+
+# ANOVA: Base R
+
+Basic anova setup is: **`aov(DV ~ IV, data = data_df)`**
+
+--
+
+```{r echo = T}
+# This would give ONLY main effects. Use pluses between factors.
+inc_aov_m <- aov(MonthlyIncome ~ Department + Gender, data = HR_dat_s)          
+
+# This gives main effects AND interactions. Use asterisk between factors. 
+inc_aov_i <- aov(MonthlyIncome ~ Department * Gender, data = HR_dat_s)    
+
+# use summary on anova object to get results
+summary(inc_aov_i)
+```
+
+---
+
+# ANOVA: **`Afex`**
+
+Mixed designs, post-hocs, and sums of squares (III v. I) with **`afex`**. Requires **id** variable for each person. 
+--
+```{r echo = T}
+library(afex)
+# add row id
+HR_dat_s <- HR_dat_s %>% mutate(id = row_number())   
+
+# Use aov_car
+inc_aov <- aov_car(MonthlyIncome ~ Department * Gender + Error(id),  #add Error(id)
+                   data = HR_dat_s)
+
+# Print object
+inc_aov
+```
+
+---
+
+# ANOVA: Post-hocs with **`emmeans`**
+
+Can do follow-up post hoc tests with **`emmeans`** which involves (a) setting up a reference grid of marginal means, and (b) specifying custom contrasts or all pairwise with **`pairs`**.
+```{r echo = T, eval = F}
+library(emmeans)
+
+ph <- emmeans(inc_aov, c("Department", "Gender"))  # set up reference grid
+pairs(ph)                                          # test all pairwise diff
+``` 
+
+```{r echo = F, eval=T}
+
+HR_dat_ss <- HR_dat_s %>% mutate(Department = abbreviate(Department))
+inc_aov_s <- aov_car(MonthlyIncome ~ Department * Gender + Error(id),  #add Error(id)
+                   data = HR_dat_ss)
+
+ph <- emmeans(inc_aov_s, c("Department", "Gender"))   
+pairs(ph)                                             
+```
+
+---
+
+# Regression: Base
+
+Basic lm setup is: **`lm(DV ~ IV, data = data_df)`**
+
+--
+
+```{r echo = T}
+JS_mod <- lm(JobSatisfaction ~ HourlyRate + WorkLifeBalance + NumCompaniesWorked, data = HR_dat_s) # JS from 3 IV
+summary(JS_mod) # summarize to get model output
+```
+
+---
+
+# Regression: **`sjPlot`** for presentation
+
+Many packages for reporting regression output (e.g., **`jtools`**, **`stargazer`**). Will use **`sjPlot`** which is geared towards social scientists. Run the **`tab_model`** function on the fitted **`lm`** object. 
+
+```{r echo = T}
+library(sjPlot)
+tab_model(JS_mod)
+```
+
+---
+
+# Regression: **`sjPlot`** for presentation
+
+Can show/hide additional columns such as:
+- `show.ci` to show confidence intervals
+- `show.se` to show standard errors
+- `show.std` to show standardized estimates
+- `show.stat` to show coefficients' test statistics
+
+```{r echo = T}
+tab_model(JS_mod, show.ci = F, show.se = T, show.std = T, show.stat = T)
+```
+
+---
+
+# Logistic Regression: Turnover
+
+Basic logistic setup: **`glm(DV ~ IV, data = data_df, family = "binomial")`**
+
+**`glm`** is a *generalized linear model* which transforms outcomes with non-normal error distributions (e.g., binary) to be fit by least squares. Requires **`family`** specification (e.g., poisson) which is binomial for binary outcomes. **`tab_model`** from **`sjPlot`** returns odds ratios and Tjur R<sup>2</sup>. 
+
+```{r echo = T}
+tur_mod <- glm(Attrition ~ MonthlyIncome + WorkLifeBalance +  JobSatisfaction, 
+               data = HR_dat_s, family = "binomial")
+tab_model(tur_mod)
+```
+
+---
+
+# RMarkdown Reports
+
+Weave together code, text, and formatting to dynamically produce data-centric documents (e.g., reports). Variant of **`markdown`** which is a lightweight markup language. 
+
+<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/MarkdownQuick.png?raw=true" width="700" height="445" style="margin: 0px 0px 30px 0px">
+
+---
+
+# Anatomy of RMarkdown
+
+<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/rmarkdown-anatomy.png?raw=true" width="900" height="500" style="margin: 0px 0px 30px 0px">
+
+---
+# New RMarkdown Document
+
+.pull-left[
+File 🠪 New File 🠪 R Markdown
+
+![](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Markdown-FileOpen.png?raw=true)
+]
+--
+.pull-right[
+Provide title, author, and output. Select html.
+<br></br>
+
+![](https://github.com/DanSimonet/METRO-Workshop/blob/main/img/Markdown-Setuppng.png?raw=true)
+]
+
+---
+# Weave Code and Text
+
+The current report analyzes income disparities and attrition for the IBM workforce. the sample contains `r nrow(HR_dat)` employees spread across `r dplyr::n_distinct(HR_dat$Department)` departments.
+
+#### ANOVA Analysis
+
+A 2 x 3 between-group ANOVA was conducted to evaluate income differences by department and gender. Results suggest no significant effect for gender, $F_{1, 1437} = .9038, p = .34$, or the interaction, $F_{2,1437} = .42, p = .66$, but a marginal effect for department, $F_{2, 1437} = 2.59, p = .08$, with sales (*M* = $6,953) trending towards higher monthly pay than HR (*M* = $6,655) and research (*M* = $6,289).
+
+```{r echo = F}
+inc_aov_s <- aov_car(MonthlyIncome ~ Department * Gender + Error(id),
+                   data = HR_dat_ss)
+kable(inc_aov_s$anova_table)
+```
+
+---
+
+class: inverse, center, middle
+
+# New Frontiers: Text Mining
+
+---
+
+# NLP Example with HR Twitter
+
+### 1. Extract Twitter Data
+
+- Using the **`rtweet`** package we can access Twitter's API and pull all tweets using the **#HR** hashtag  over the past 9 days (Twitter's API historical limit for extraction)<sup>2</sup>
+<br></br>
+
+.footnote[<sup>2</sup> The **`academictwitteR`** package overcomes this limit but requires academic credentials and project registration with twitter]
+
+```{r tweet, eval = F, echo = T}
+library(rtweet)
+HR_rt <- search_tweets(
+  "#HR", n = 20000, include_rts = FALSE)
+```
+
+```{r, echo = F}
+HR_rt <- read_csv("../Data/HR_rt.csv")
+HR_rt_s <- HR_rt %>% select(created_at, screen_name, text)
+print(HR_rt_s[1:5,], n_extra = 3)
+```
+
+---
+
+### 2. Pre-process Text 
+
+- Subset a few columns for a smaller dataset
+
+```{r, echo = T}
+HR_rt_s <- HR_rt %>% select(created_at, screen_name, text)
+```
+```{r echo = F}
+HR_rt_s[1:4,]
+```
+--
+- Make lowercase
+```{r, eval = F, echo = T}
+library(stringr)
+HR_rt_s %>%
+  mutate(text = str_to_lower(text)) #<<
+```
+```{r eval = T, echo = F}
+HR_rt_s %>%
+  mutate(text = str_to_lower(text)) %>% slice(1:4) %>% print(n_extra = 3)
+```
+
+---
+
+### 2. Pre-process Text 
+
+```{r echo = F}
+HR_rt_s %>%
+  mutate(text = str_to_lower(text)) %>% slice(1:5) %>% print(n_extra = 3)
+```
+--
+- Remove punctuation
+```{r, eval = F, echo = T}
+HR_rt_s %>%
+  mutate(text = str_to_lower(text) %>%
+         str_remove_all("[:punct:]")) #<<
+```
+```{r eval = T, echo = F}
+HR_rt_s %>%
+  mutate(text = str_to_lower(text) %>% str_remove_all("[:punct:]")) %>% slice(1:5) %>% print(n_extra = 3)
+```
+
+---
+
+### 2. Pre-process Text 
+
+```{r echo = F}
+HR_rt_s %>%
+   mutate(text = str_to_lower(text) %>% str_remove_all("[:punct:]")) %>% slice(1:5) %>% print(n_extra = 3)
+```
+--
+- Remove digits
+```{r, eval = F, echo = T}
+HR_rt_s %>%
+  mutate(text = str_to_lower(text) %>%
+         str_remove_all("[:punct:]") %>%
+         str_remove_all("[:digit:]")) #<<
+```
+```{r eval = T, echo = F}
+HR_rt_s %>%
+  mutate(text = str_to_lower(text) %>% str_remove_all("[:punct:]") %>%
+           str_remove_all("[:digit:]")) %>% slice(1:5) %>% print(n_extra = 3)
+```
+
+---
+
+### 2. Pre-process Text 
+
+- Filter out tweets beginning with `RT` (retweets) while removing URLs
+and characters other than natural language
+
+```{r, eval = F, echo = T}
+HR_rt_s <- HR_rt_s %>%
+  filter(!str_detect(text, "^RT")) %>%  #<<
+  mutate(text = str_to_lower(text) %>%  
+           str_remove_all("[:punct:]") %>%
+           str_remove_all("[:digit:]") %>%
+           str_replace_all("https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;|&lt;|&gt;|RT|https", ""))  #<<
+```
+
+---
+
+### 3. Tidy and refine
+
+- Put into *tidy* format: **a table with one-token-per-row**. A token is a meaningful unit of text, such as a word, sentence, or paragraph. 
+
+```{r echo = T}
+library(tidytext)
+
+HR_rt_s %>%
+  unnest_tokens(word, text) #<<
+```
+
+---
+
+### 3. Tidy and refine text
+
+- Remove frequently used **stop-words** (e.g., "the", "a", "is") and filter tokens without letters. After initial screening removed the words **hr** and **amp** (html authoring tag). 
+
+```{r echo = T}
+tidy_HR <- HR_rt_s %>%
+  unnest_tokens(word, text) %>%
+  filter(!word %in% stop_words$word, #<<
+        str_detect(word, "[a-z]"),
+        word != "hr", word != "amp") #<<
+head(tidy_HR)
+```
+```{r echo = F}
+HR_rt_s <- HR_rt %>% select(created_at, screen_name, text) %>%
+  filter(!str_detect(text, "^RT")) %>%  #<<
+  mutate(text = str_to_lower(text) %>%  
+           str_remove_all("[:punct:]") %>%
+           str_remove_all("[:digit:]") %>%
+           str_replace_all("https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;|&lt;|&gt;|RT|https", ""))  #<<
+
+tidy_HR <- HR_rt_s %>%
+  unnest_tokens(word, text) %>%
+  filter(!word %in% stop_words$word, #<<
+        str_detect(word, "[a-z]"),
+        word != "hr", word != "amp") #<<
+```
+
+---
+
+### 4. Word Frequency
+
+.pull-left[
+```{r echo = T}
+HR_freq <- tidy_HR %>% 
+  count(word, sort = TRUE) 
+head(HR_freq)
+```
+
+```{r ggplot-w1, eval = F, echo = T}
+HR_freq %>%
+  filter(n > 500) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(x = word, y = n)) +
+  geom_bar(stat = "identity") +
+  xlab(NULL) +
+  coord_flip() +
+  ggtitle("Common Words for HR Hashtags (September, 2021)") +
+  theme_classic()
+```
+]
+
+.pull-right[
+```{r ggplot-w1-out, ref.label="ggplot-w1", echo=FALSE, fig.dim=c(4.8, 6)}
+```
+]
+
+---
+
+### 4. Word Frequency - Word Cloud
+.pull-left[
+```{r echo = T, eval = F}
+library(wordcloud) # for making wordcloud
+library(viridis)   # color palette
+
+HR_freq %>% 
+  with(wordcloud(
+    word, n, max.words = 30, 
+    colors = plasma(n=15, direction = -1),
+    rot.per = .5))
+```
+]
+
+.pull-right[
+```{r echo = F, fig.dim=c(6, 7)}
+library(wordcloud) # for making wordcloud
+library(viridis)   # color palette
+
+HR_freq %>% 
+  with(wordcloud(
+    word, n, max.words = 30, 
+    colors = plasma(n=15, direction = -1),
+    rot.per = .5))
+```
+]
+
+---
+
+### 5. Sentiment
+
+Append analysis of lexical valence using a sentiment dictionary (e.g., AFINN, nrc, bing) with **`inner_join`**. The following visual shows which words from HR tweets most often contributed to positive and negative opinions or sentiment. 
+
+```{r echo = T}
+hr_sentiment <- tidy_HR %>%
+  inner_join(get_sentiments("bing")) #<<
+```
+
+```{r echo = F}
+head(hr_sentiment, n = 4)
+```
+
+---
+
+### 5. Sentiment
+
+Append analysis of lexical valence using a sentiment dictionary (e.g., AFINN, nrc, bing) with **`inner_join`**. The following visual shows which words from HR tweets most often contributed to positive and negative opinions or sentiment. 
+
+.pull-left[
+```{r echo = T}
+hr_sentiment <- tidy_HR %>%
+  inner_join(get_sentiments("bing")) #<<
+```
+
+```{r echo = F}
+head(hr_sentiment, n = 4)
+```
+
+```{r ggplot-hrsent, eval = F, echo = T}
+hr_sentiment %>%
+  count(sentiment, word) %>%
+  ungroup() %>%
+  filter(n >= 75) %>%
+  mutate(n = ifelse(
+    sentiment == "negative", -n, n)) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(n, word, fill = sentiment)) +
+  geom_col(show.legend = F) +
+  labs(x = "Contribution to sentiment", y = NULL)
+```
+]
+--
+.pull-right[
+```{r ggplot-hrsent-out, ref.label="ggplot-hrsent", echo=FALSE, fig.dim=c(5, 5)}
+```
+]
+
+---
+
+### 5. Leadership Sentiment (most common word)
+
+.pull-left[
+
+Subset tweets to those mentioning "leader", append and count sentiment, and then recast into a matrix for a cloud comparison.
+```{r word-c1, eval = F, echo = T}
+HR_rt_s %>% 
+  filter(str_detect(text, "leader")) %>%  #extract leader tweets
+  unnest_tokens(word, text) %>%
+  filter(!word %in% stop_words$word, 
+        str_detect(word, "[a-z]"),
+        word != "hr", word != "amp") %>%
+  inner_join(get_sentiments("bing")) %>%
+  count(word, sentiment, sort = TRUE) %>%
+  reshape2::acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("gray20", "gray80"),
+                   max.words = 100)
+```
+]
+
+.pull-right[
+```{r word-c1-out, ref.label = "word-c1", echo = F,  fig.dim=c(5, 5.5)}
+```
+]
+---
+
+### 6. Bigram Network
+```{r eval = F, echo = F}
+tidy_bigrams <- HR_rt %>%
+  filter(!str_detect(text, "^RT")) %>%
+  mutate(text = str_replace_all(text, "https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;|&lt;|&gt;|RT|https", "")) %>%
+  unnest_tokens(word, text) %>%
+  mutate(next_word = lead(word)) %>%
+  filter(!word %in% stop_words$word, # remove stop words
+         !next_word %in% stop_words$word, # remove stop words
+         !word %in% c("hr", "amp"),
+         !next_word %in% c("hr", "amp"), 
+         str_detect(word, "[a-z]"), # remove words containing only numbers or symbols
+         str_detect(next_word, "[a-z]")) %>% # remove words containing ony numbers or symbols
+  filter(status_id == lead(status_id)) %>% # needed to ensure bigrams to cross from one tweet into the next
+  unite(bigram, word, next_word, sep = ' ') %>%
+  select(bigram, created_at, screen_name, status_id)
+
+tidy_bigrams %>%
+  count(bigram, sort=TRUE) %>%
+  mutate(bigram = reorder(bigram, n))
+```
+
+```{r echo = F}
+library(igraph)
+library(ggraph)
+
+count_bigrams <- function(dataset) {
+  dataset %>%
+     filter(!str_detect(text, "^RT")) %>%
+  mutate(text = str_replace_all(text, "https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;|&lt;|&gt;|RT|https", "")) %>%
+    unnest_tokens(bigram, text, token = "ngrams", n = 2) %>%
+    separate(bigram, c("word1", "word2"), sep = " ") %>%
+    filter(!word1 %in% stop_words$word,
+           !word2 %in% stop_words$word) %>%
+    count(word1, word2, sort = TRUE)
+}
+
+visualize_bigrams <- function(bigrams) {
+  set.seed(2016)
+  a <- grid::arrow(type = "closed", length = unit(.10, "inches"))
+  
+  bigrams %>%
+    graph_from_data_frame() %>%
+    ggraph(layout = "fr") +
+    geom_edge_link(aes(edge_alpha = n), show.legend = FALSE, arrow = a) +
+    geom_node_point(color = "lightblue", size = 2) +
+    geom_node_text(aes(label = name), vjust = 1, hjust = 1, size = 3) +
+    theme_void()
+}
+
+tidy_bigrams <- count_bigrams(HR_rt)
+tidy_bigrams %>%
+  filter(n > 50,
+         !str_detect(word1, "\\d"),
+         !str_detect(word2, "\\d")) %>%
+  visualize_bigrams()
+```
+
+---
+
+### 7. Topic Modeling
+
+Find a mixture of words associated with different topics while determining the mixture of topics describing each document. Akin to factor analysis but for text in documents. 
+```{r, fig.height = 2.5, fig.width=4}
+library(topicmodels)
+
+LDA_top <- tidy_HR %>% filter(!str_detect(word, "tco")) %>%
+    count(screen_name, word) %>%
+    cast_dtm(screen_name, word, n) %>%   #<< convert to document-term matrix
+    LDA(k = 2, control = list(seed=123)) #<< run Latent Dirichlet allocation (LDA)
+
+LDA_top %>% tidy(matrix = "beta") %>%    #<< tidy the LDA output
+    group_by(topic) %>%
+    slice_max(beta, n = 10) %>% 
+    mutate(term = reorder_within(term, beta, topic)) %>%
+    ggplot(aes(beta, term, fill = factor(topic))) +
+    geom_col(show.legend = F) +
+    facet_wrap(~ topic, scales = "free") +
+    scale_y_reordered() +
+    theme(text = element_text(size = 6))
+```
+
+---
+
+# Mine That Text
+
+- Books
+ - [Text Mining with R](https://www.tidytextmining.com/)
+ 
+ - [Text Mining for Social and Behavioral Research](https://books.psychstat.org/textmining/index.html)
+ 
+- Data Camp
+ - [Introduction to Text Analysis in R](https://app.datacamp.com/learn/courses/introduction-to-text-analysis-in-r)
+ 
+ - [Text Mining with Bag-of-Words in R](https://app.datacamp.com/learn/courses/text-mining-with-bag-of-words-in-r)
+ 
+ - [Introduction to Natural Language Processing in R](https://app.datacamp.com/learn/courses/introduction-to-natural-language-processing-in-r)
+ 
+.center[<img src="https://github.com/DanSimonet/METRO-Workshop/blob/main/img/gif/words.gif?raw=true" width="350" height="200">]
+
+---
+
+# Thank You!
+
+Email:    simonetd@montclair.edu
+
+Homepage: [https://theleaplab.weebly.com/](https://theleaplab.weebly.com/)
+
+Slides created via the R package **`xaringan`**
