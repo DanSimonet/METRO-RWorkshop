@@ -34,7 +34,10 @@ In the unlikely event that there are problems with the conference internet conne
 2. A recent version of RStudio IDE (~1.4.1717-3), available for free at [www.rstudio.com/download](http://www.rstudio.com/download)
 3. The set of relevant R packages, which you can install by connecting to the internet, opening RStudio, and running:  
  
-    install.packages(c("babynames", "fivethirtyeight", "formatR", "gapminder", "hexbin", "mgcv", "maps", "mapproj", "nycflights13", "rmarkdown", "skimr", "tidyverse", "viridis")) 
+    install.packages(c("afex", "corrplot", "tidyverse", "emmeans", "ggraph",
+              "igraph", "kable", "kableExtra", "modelsummary",
+              "reshape2", "rtweet", "sjPlot", "tidytext", 
+              "topicmodels", "viridis", "wordcloud", "xaringan")) 
 
 ## Instructor
 
